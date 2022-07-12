@@ -9,51 +9,40 @@ import SwiftUI
 import GoogleSignIn
 
 struct HomeView: View {
+    @ObservedObject var taskListVM = TaskListViewModel()
     
-    private let user = GIDSignIn.sharedInstance.currentUser
-    @EnvironmentObject var viewModel: AuthenticationViewModel
+    let tasks = testDataTasks
+    
+    @State var presentAddNewItem = false
     
     var body: some View {
         NavigationView {
-            VStack {
-                HStack {
-                    
-                    NetworkImage(url: user?.profile?.imageURL(withDimension: 200))
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100, alignment: .center)
-                        .cornerRadius(8)
-                    
-                    VStack(alignment: .leading) {
-                        Text(user?.profile?.name ?? "")
-                            .font(.headline)
-                        
-                        Text(user?.profile?.email ?? "")
-                            .font(.subheadline)
+            VStack(alignment: .leading) {
+                List {
+                    ForEach(taskListVM.taskCellViewModels) { taskCellVM in
+                        TaskCell(taskCellVM: taskCellVM)
                     }
-                    
-                    Spacer()
+                    if presentAddNewItem{
+                        TaskCell(taskCellVM: TaskCellViewModel(task: Task(title: "", completed: false))) { task in
+                            self.taskListVM.addTask(task: task)
+                            self.presentAddNewItem.toggle()
+                        }
+                    }
+                }
+                Button(action: {
+                    self.presentAddNewItem.toggle()
+                }) {
+                    HStack {
+                        Image(systemName: "plus.circle.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                        Text("Add New Task")
+                    }
                 }
                 .padding()
-                .frame(maxWidth: .infinity)
-                .background(Color(.secondarySystemBackground))
-                .cornerRadius(12)
-                .padding()
-                
-                Spacer()
-                
-                Button(action: viewModel.signOut) {
-                    Text("Sign out")
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color(.systemIndigo))
-                        .cornerRadius(12)
-                        .padding()
-                }
             }
             .navigationTitle("Done")
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -77,5 +66,25 @@ struct NetworkImage: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(AuthenticationViewModel())
+    }
+}
+
+struct TaskCell: View {
+    @ObservedObject var taskCellVM: TaskCellViewModel
+    var onCommit: (Task) -> (Void) = {_ in }
+    
+    var body: some View {
+        HStack {
+            Image(systemName: taskCellVM.task.completed ? "checkmark.circle.fill" : "circle")
+                .resizable()
+                .frame(width: 20, height: 20)
+                .onTapGesture {
+                    self.taskCellVM.task.completed.toggle()
+                }
+            TextField("Enter the task title", text: $taskCellVM.task.title) {
+                self.onCommit(self.taskCellVM.task)
+            }
+        }
     }
 }
