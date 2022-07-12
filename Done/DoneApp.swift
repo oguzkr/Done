@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-import FirebaseCore
-
+import Firebase
+import GoogleSignIn
 
 class AppDelegate: NSObject, UIApplicationDelegate {
 
@@ -20,10 +20,21 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct DoneApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var authViewModel = AuthenticationViewModel()
+    init() {
+      setupAuthentication()
+    }
+
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            ContentView()
+                .environmentObject(authViewModel)
         }
     }
+}
+
+extension DoneApp {
+  private func setupAuthentication() {
+    FirebaseApp.configure()
+  }
 }
