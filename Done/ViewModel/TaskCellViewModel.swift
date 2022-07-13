@@ -9,6 +9,8 @@ import Foundation
 import Combine
 
 class TaskCellViewModel: ObservableObject, Identifiable {
+    
+    @Published var taskRepository = TaskRepository()
     @Published var task: Task
     
     var id = ""
@@ -26,10 +28,18 @@ class TaskCellViewModel: ObservableObject, Identifiable {
             .assign(to: \.completionStateIconName, on: self)
             .store(in: &cancellables)
         
-        $task.map { task in
+        $task.compactMap { task in
             task.id
         }
         .assign(to: \.id, on: self)
-        .store(in: &cancellables )
+        .store(in: &cancellables)
+        
+        $task
+            .dropFirst()
+            .debounce(for: 0.8, scheduler: RunLoop.main)
+            .sink { task in
+            self.taskRepository.updateTask(task)
+        }
+        .store(in: &cancellables)
     }
 }

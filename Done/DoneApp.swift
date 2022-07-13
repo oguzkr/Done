@@ -36,5 +36,6 @@ struct DoneApp: App {
 extension DoneApp {
   private func setupAuthentication() {
     FirebaseApp.configure()
+      Auth.auth().signInAnonymously()
   }
 }
