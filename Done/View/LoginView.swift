@@ -9,33 +9,37 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @EnvironmentObject var viewModel: AuthenticationViewModel
-    
+    @Environment (\.presentationMode) var presentationMode
+    @State var coordinator: SignInWithAppleCoordinator?
+
     var body: some View {
         VStack {
-            
             Image("check")
                 .resizable()
                 .frame(width: 100, height: 100, alignment: .center)
                 .padding([.top,.bottom], 50)
             
-            Text("Bored from complicated todo apps?")
+            Text("Access your todos from on device")
                 .fontWeight(.black)
                 .foregroundColor(Color("appBlue"))
                 .font(.title)
                 .multilineTextAlignment(.center)
                 .padding([.leading, .trailing], 10)
             
-            
             Text("We are not going to ask you to create complicated profile or create a list and customize it. Just add a task, get it done, move to next one.")
+                .padding()
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
-                .padding()
-            
-            GoogleSignInButton()
+                
+            AppleSignInButton()
                 .padding()
                 .onTapGesture {
-                    viewModel.signIn()
+                    self.coordinator = SignInWithAppleCoordinator()
+                    if let coordinator = self.coordinator {
+                        coordinator.startSignInWithAppleFlow {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }
+                    }
                 }
             
             Text("You can also manage your tasks on your Apple Watch")
@@ -43,8 +47,8 @@ struct LoginView: View {
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
                 .padding()
-            
-        }.background(Color("appDark"))
+        }
+        .background(Color("appDark"))
         
     }
 }

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import GoogleSignIn
 
 struct HomeView: View {
     @ObservedObject var taskListVM = TaskListViewModel()
@@ -14,13 +13,18 @@ struct HomeView: View {
     let tasks = testDataTasks
     
     @State var presentAddNewItem = false
+    @State var showSignInForm = false
     
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
                 List {
-                    ForEach(taskListVM.taskCellViewModels) { taskCellVM in
-                        TaskCell(taskCellVM: taskCellVM)
+                    if taskListVM.taskCellViewModels.count > 0 {
+                        ForEach(taskListVM.taskCellViewModels) { taskCellVM in
+                                TaskCell(taskCellVM: taskCellVM)
+                        }
+                    } else {
+                        //EmpyView
                     }
                     if presentAddNewItem{
                         TaskCell(taskCellVM: TaskCellViewModel(task: Task(title: "", completed: false))) { task in
@@ -41,50 +45,20 @@ struct HomeView: View {
                 }
                 .padding()
             }
+            .sheet(isPresented: $showSignInForm) {
+                LoginView()
+            }
+            .navigationBarItems(trailing: Button(action: { self.showSignInForm.toggle()}){
+                Image(systemName: "person.circle")
+            })
             .navigationTitle("Done")
         }
     }
 }
 
-struct NetworkImage: View {
-    let url: URL?
-    
-    var body: some View {
-        if let url = url,
-           let data = try? Data(contentsOf: url),
-           let uiImage = UIImage(data: data) {
-            Image(uiImage: uiImage)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-        } else {
-            Image(systemName: "person.circle.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-        }
-    }
-}
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environmentObject(AuthenticationViewModel())
     }
 }
 
-struct TaskCell: View {
-    @ObservedObject var taskCellVM: TaskCellViewModel
-    var onCommit: (Task) -> (Void) = {_ in }
-    
-    var body: some View {
-        HStack {
-            Image(systemName: taskCellVM.task.completed ? "checkmark.circle.fill" : "circle")
-                .resizable()
-                .frame(width: 20, height: 20)
-                .onTapGesture {
-                    self.taskCellVM.task.completed.toggle()
-                }
-            TextField("Enter the task title", text: $taskCellVM.task.title) {
-                self.onCommit(self.taskCellVM.task)
-            }
-        }
-    }
-}

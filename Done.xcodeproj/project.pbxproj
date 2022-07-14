@@ -7,42 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D052F5D288095EE007DDB87 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D052F5C288095EE007DDB87 /* TaskCell.swift */; };
+		1D32BF46288082DC003FB38F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D32BF45288082DC003FB38F /* GoogleService-Info.plist */; };
 		1DADE8DE287F3E6800F1F495 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1DADE8DD287F3E6800F1F495 /* FirebaseFirestore */; };
 		1DADE8E0287F3E6800F1F495 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1DADE8DF287F3E6800F1F495 /* FirebaseFirestoreSwift */; };
 		1DADE8E3287F3F7400F1F495 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADE8E2287F3F7400F1F495 /* TaskRepository.swift */; };
+		1DADE8E52880635500F1F495 /* AppleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADE8E42880635500F1F495 /* AppleSignInButton.swift */; };
+		1DADE8E82880754D00F1F495 /* SignInWithAppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADE8E72880754D00F1F495 /* SignInWithAppleCoordinator.swift */; };
 		1DD28348287C7C5F0095880A /* DoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD28347287C7C5F0095880A /* DoneApp.swift */; };
 		1DD2834C287C7C620095880A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DD2834B287C7C620095880A /* Assets.xcassets */; };
 		1DD2834F287C7C620095880A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DD2834E287C7C620095880A /* Preview Assets.xcassets */; };
-		1DD28356287C7D370095880A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DD28355287C7D370095880A /* GoogleService-Info.plist */; };
 		1DD28359287C7E280095880A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1DD28358287C7E280095880A /* FirebaseAnalytics */; };
 		1DD2835B287C7E280095880A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1DD2835A287C7E280095880A /* FirebaseAuth */; };
 		1DD28363287C80CE0095880A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1DD28362287C80CE0095880A /* FirebaseAuth */; };
 		1DD28366287C81630095880A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 1DD28365287C81630095880A /* GoogleSignIn */; };
-		1DD2836E287C86310095880A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2836D287C86310095880A /* ContentView.swift */; };
-		1DD28370287C86A10095880A /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2836F287C86A10095880A /* AuthenticationViewModel.swift */; };
 		1DD28373287C87780095880A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD28372287C87780095880A /* LoginView.swift */; };
 		1DD28375287C87810095880A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD28374287C87810095880A /* HomeView.swift */; };
-		1DD28377287C87940095880A /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD28376287C87940095880A /* GoogleSignInButton.swift */; };
-		1DD28379287DE7F50095880A /* UserInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD28378287DE7F50095880A /* UserInfoCard.swift */; };
 		1DD2837E287DEC850095880A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2837D287DEC850095880A /* Task.swift */; };
 		1DD28380287DF1E30095880A /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2837F287DF1E30095880A /* TaskCellViewModel.swift */; };
 		1DD28382287DF36D0095880A /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD28381287DF36D0095880A /* TaskListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D052F5C288095EE007DDB87 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		1D32BF45288082DC003FB38F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1DADE8E2287F3F7400F1F495 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
+		1DADE8E42880635500F1F495 /* AppleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInButton.swift; sourceTree = "<group>"; };
+		1DADE8E72880754D00F1F495 /* SignInWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleCoordinator.swift; sourceTree = "<group>"; };
+		1DADE8E928807AFF00F1F495 /* Done.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Done.entitlements; sourceTree = "<group>"; };
 		1DD28344287C7C5F0095880A /* Done.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Done.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD28347287C7C5F0095880A /* DoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneApp.swift; sourceTree = "<group>"; };
 		1DD2834B287C7C620095880A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DD2834E287C7C620095880A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1DD28355287C7D370095880A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1DD2835C287C80420095880A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		1DD2836D287C86310095880A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		1DD2836F287C86A10095880A /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		1DD28372287C87780095880A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1DD28374287C87810095880A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		1DD28376287C87940095880A /* GoogleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInButton.swift; sourceTree = "<group>"; };
-		1DD28378287DE7F50095880A /* UserInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCard.swift; sourceTree = "<group>"; };
 		1DD2837D287DEC850095880A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		1DD2837F287DF1E30095880A /* TaskCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
 		1DD28381287DF36D0095880A /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
@@ -73,6 +72,14 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		1DADE8E62880753E00F1F495 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1DADE8E72880754D00F1F495 /* SignInWithAppleCoordinator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		1DD2833B287C7C5F0095880A = {
 			isa = PBXGroup;
 			children = (
@@ -92,15 +99,17 @@
 		1DD28346287C7C5F0095880A /* Done */ = {
 			isa = PBXGroup;
 			children = (
+				1DADE8E928807AFF00F1F495 /* Done.entitlements */,
+				1DADE8E62880753E00F1F495 /* Services */,
 				1DADE8E1287F3F4800F1F495 /* Repositories */,
 				1DD2835D287C80600095880A /* View */,
 				1DD28371287C87530095880A /* ViewModel */,
 				1DD2837C287DEC7D0095880A /* Model */,
 				1DD28367287C83060095880A /* Components */,
 				1DD2835C287C80420095880A /* Info.plist */,
+				1D32BF45288082DC003FB38F /* GoogleService-Info.plist */,
 				1DD28347287C7C5F0095880A /* DoneApp.swift */,
 				1DD2834B287C7C620095880A /* Assets.xcassets */,
-				1DD28355287C7D370095880A /* GoogleService-Info.plist */,
 				1DD2834D287C7C620095880A /* Preview Content */,
 			);
 			path = Done;
@@ -117,7 +126,6 @@
 		1DD2835D287C80600095880A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1DD2836D287C86310095880A /* ContentView.swift */,
 				1DD28372287C87780095880A /* LoginView.swift */,
 				1DD28374287C87810095880A /* HomeView.swift */,
 			);
@@ -127,8 +135,8 @@
 		1DD28367287C83060095880A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				1DD28376287C87940095880A /* GoogleSignInButton.swift */,
-				1DD28378287DE7F50095880A /* UserInfoCard.swift */,
+				1DADE8E42880635500F1F495 /* AppleSignInButton.swift */,
+				1D052F5C288095EE007DDB87 /* TaskCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -136,7 +144,6 @@
 		1DD28371287C87530095880A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1DD2836F287C86A10095880A /* AuthenticationViewModel.swift */,
 				1DD2837F287DF1E30095880A /* TaskCellViewModel.swift */,
 				1DD28381287DF36D0095880A /* TaskListViewModel.swift */,
 			);
@@ -223,7 +230,7 @@
 			files = (
 				1DD2834F287C7C620095880A /* Preview Assets.xcassets in Resources */,
 				1DD2834C287C7C620095880A /* Assets.xcassets in Resources */,
-				1DD28356287C7D370095880A /* GoogleService-Info.plist in Resources */,
+				1D32BF46288082DC003FB38F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,17 +241,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DD2836E287C86310095880A /* ContentView.swift in Sources */,
 				1DADE8E3287F3F7400F1F495 /* TaskRepository.swift in Sources */,
 				1DD2837E287DEC850095880A /* Task.swift in Sources */,
 				1DD28348287C7C5F0095880A /* DoneApp.swift in Sources */,
-				1DD28379287DE7F50095880A /* UserInfoCard.swift in Sources */,
+				1DADE8E52880635500F1F495 /* AppleSignInButton.swift in Sources */,
+				1D052F5D288095EE007DDB87 /* TaskCell.swift in Sources */,
 				1DD28373287C87780095880A /* LoginView.swift in Sources */,
 				1DD28375287C87810095880A /* HomeView.swift in Sources */,
 				1DD28380287DF1E30095880A /* TaskCellViewModel.swift in Sources */,
 				1DD28382287DF36D0095880A /* TaskListViewModel.swift in Sources */,
-				1DD28377287C87940095880A /* GoogleSignInButton.swift in Sources */,
-				1DD28370287C86A10095880A /* AuthenticationViewModel.swift in Sources */,
+				1DADE8E82880754D00F1F495 /* SignInWithAppleCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +307,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -355,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -370,10 +376,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Done/Done.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Done/Preview Content\"";
-				DEVELOPMENT_TEAM = QC54JWS8ZR;
+				DEVELOPMENT_TEAM = C7WG386WRN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Done/Info.plist;
@@ -382,16 +389,17 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.oguzkr.Done;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oguzkr.DoneApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -400,10 +408,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Done/Done.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Done/Preview Content\"";
-				DEVELOPMENT_TEAM = QC54JWS8ZR;
+				DEVELOPMENT_TEAM = C7WG386WRN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Done/Info.plist;
@@ -412,16 +421,17 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.oguzkr.Done;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oguzkr.DoneApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

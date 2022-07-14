@@ -7,35 +7,24 @@
 
 import SwiftUI
 import Firebase
-import GoogleSignIn
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-    return true
-  }
-    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        if Auth.auth().currentUser == nil {
+            Auth.auth().signInAnonymously()
+        }
+        return true
+    }
 }
 
 @main
 struct DoneApp: App {
-    @StateObject var authViewModel = AuthenticationViewModel()
-    init() {
-      setupAuthentication()
-    }
-
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(authViewModel)
+            HomeView()
         }
     }
 }
 
-extension DoneApp {
-  private func setupAuthentication() {
-    FirebaseApp.configure()
-      Auth.auth().signInAnonymously()
-  }
-}
