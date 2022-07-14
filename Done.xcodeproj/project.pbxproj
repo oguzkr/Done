@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D052F5D288095EE007DDB87 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D052F5C288095EE007DDB87 /* TaskCell.swift */; };
+		1D052F5F28809803007DDB87 /* EmptyTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D052F5E28809803007DDB87 /* EmptyTaskView.swift */; };
 		1D32BF46288082DC003FB38F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D32BF45288082DC003FB38F /* GoogleService-Info.plist */; };
 		1DADE8DE287F3E6800F1F495 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1DADE8DD287F3E6800F1F495 /* FirebaseFirestore */; };
 		1DADE8E0287F3E6800F1F495 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1DADE8DF287F3E6800F1F495 /* FirebaseFirestoreSwift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		1D052F5C288095EE007DDB87 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		1D052F5E28809803007DDB87 /* EmptyTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTaskView.swift; sourceTree = "<group>"; };
 		1D32BF45288082DC003FB38F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1DADE8E2287F3F7400F1F495 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		1DADE8E42880635500F1F495 /* AppleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInButton.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				1DADE8E42880635500F1F495 /* AppleSignInButton.swift */,
 				1D052F5C288095EE007DDB87 /* TaskCell.swift */,
+				1D052F5E28809803007DDB87 /* EmptyTaskView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DADE8E3287F3F7400F1F495 /* TaskRepository.swift in Sources */,
+				1D052F5F28809803007DDB87 /* EmptyTaskView.swift in Sources */,
 				1DD2837E287DEC850095880A /* Task.swift in Sources */,
 				1DD28348287C7C5F0095880A /* DoneApp.swift in Sources */,
 				1DADE8E52880635500F1F495 /* AppleSignInButton.swift in Sources */,

@@ -14,6 +14,7 @@ struct LoginView: View {
 
     var body: some View {
         VStack {
+            
             Image("check")
                 .resizable()
                 .frame(width: 100, height: 100, alignment: .center)
@@ -33,6 +34,7 @@ struct LoginView: View {
                 
             AppleSignInButton()
                 .padding()
+                .frame(height: 80)
                 .onTapGesture {
                     self.coordinator = SignInWithAppleCoordinator()
                     if let coordinator = self.coordinator {

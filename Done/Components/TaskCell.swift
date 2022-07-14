@@ -13,15 +13,17 @@ struct TaskCell: View {
     
     var body: some View {
         HStack {
-            Image(systemName: taskCellVM.task.completed ? "checkmark.circle.fill" : "circle")
-                .resizable()
-                .frame(width: 20, height: 20)
-                .onTapGesture {
-                    self.taskCellVM.task.completed.toggle()
-                }
             TextField("Enter the task title", text: $taskCellVM.task.title) {
                 self.onCommit(self.taskCellVM.task)
             }
+            Image(systemName: taskCellVM.task.completed ? "checkmark.circle.fill" : "checkmark.circle")
+                .renderingMode(.template)
+                .foregroundColor(Color("appBlue"))
+                .frame(width: 20, height: 20)
+               
+                .onTapGesture {
+                    self.taskCellVM.task.completed.toggle()
+                }
         }
     }
 }
@@ -32,7 +34,7 @@ struct TaskCell_Previews: PreviewProvider {
             .padding()
             .previewLayout(.fixed(width: 375, height: 50))
             .previewDisplayName("TaskCell")
-        TaskCell(taskCellVM: TaskCellViewModel(task: Task(title: "Task 1", completed: false)))
+        TaskCell(taskCellVM: TaskCellViewModel(task: Task(title: "Task 123 Task 456", completed: false)))
             .padding()
             .previewLayout(.fixed(width: 375, height: 50))
             .previewDisplayName("TaskCell")
