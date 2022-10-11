@@ -9,21 +9,31 @@ import SwiftUI
 
 struct TaskCell: View {
     @ObservedObject var taskCellVM: TaskCellViewModel
+    
     var onCommit: (Task) -> (Void) = {_ in }
     
     var body: some View {
         HStack {
+            
             TextField("Enter the task title", text: $taskCellVM.task.title) {
                 self.onCommit(self.taskCellVM.task)
             }
+            
             Image(systemName: taskCellVM.task.completed ? "checkmark.circle.fill" : "checkmark.circle")
-                .renderingMode(.template)
                 .foregroundColor(Color("appBlue"))
-                .frame(width: 20, height: 20)
-               
+                .frame(width: 40, height: 50)
                 .onTapGesture {
                     self.taskCellVM.task.completed.toggle()
                 }
+    
+            Button(action: {
+                self.taskCellVM.taskRepository.deleteTask(self.taskCellVM.task)
+            }) {
+                Image(systemName: "trash")
+                    .foregroundColor(Color("appBlue"))
+                    .frame(width: 40, height: 50)
+            }
+
         }
     }
 }
