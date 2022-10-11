@@ -33,15 +33,15 @@ struct TaskCell_Previews: PreviewProvider {
         TaskCell(taskCellVM: TaskCellViewModel(task: Task(title: "", completed: false)))
             .padding()
             .previewLayout(.fixed(width: 375, height: 50))
-            .previewDisplayName("TaskCell")
+            .previewDisplayName("TaskCell Completed False&Empty")
         TaskCell(taskCellVM: TaskCellViewModel(task: Task(title: "Task 123 Task 456", completed: false)))
             .padding()
             .previewLayout(.fixed(width: 375, height: 50))
-            .previewDisplayName("TaskCell")
+            .previewDisplayName("TaskCell Completed False&Text")
         TaskCell(taskCellVM: TaskCellViewModel(task: Task(title: "Task", completed: true)))
             .padding()
             .previewLayout(.fixed(width: 375, height: 50))
-            .previewDisplayName("TaskCell")
+            .previewDisplayName("TaskCell Completed True&Text")
     }
 }
 

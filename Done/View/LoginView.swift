@@ -13,7 +13,8 @@ struct LoginView: View {
     @State var coordinator: SignInWithAppleCoordinator?
 
     var body: some View {
-        VStack {
+        VStack{
+            Color("appDark").ignoresSafeArea()
             
             Image("check")
                 .resizable()
@@ -26,12 +27,14 @@ struct LoginView: View {
                 .font(.title)
                 .multilineTextAlignment(.center)
                 .padding([.leading, .trailing], 10)
+                .fixedSize(horizontal: false, vertical: true)
             
             Text("We are not going to ask you to create complicated profile or create a list and customize it. Just add a task, get it done, move to next one.")
                 .padding()
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
-                
+                .fixedSize(horizontal: false, vertical: true)
+            
             AppleSignInButton()
                 .padding()
                 .frame(height: 80)
@@ -49,8 +52,10 @@ struct LoginView: View {
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
                 .padding()
+            Color("appDark").ignoresSafeArea()
         }
         .background(Color("appDark"))
+        
         
     }
 }
