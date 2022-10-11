@@ -61,6 +61,22 @@ class TaskRepository: ObservableObject {
                 fatalError("unable to encode task: \(error.localizedDescription)")
             }
         }
-            
+    }
+    
+    func deleteTask(_ task: Task) {
+        if let taskId = task.id, let userId = Auth.auth().currentUser?.uid {
+            var taskToRemove = task
+            let userId = Auth.auth().currentUser?.uid
+            taskToRemove.userId = userId
+            db.collection("tasks").document(taskId).delete() { err in
+              if let err = err {
+                print("Error removing document: \(err)")
+              }
+              else {
+                print("Document successfully removed!")
+              }
+            }
+        }
+
     }
 }
