@@ -19,7 +19,7 @@ struct HomeView: View {
         NavigationView {
             VStack(alignment: .leading) {
                 List {
-                    if taskListVM.taskCellViewModels.count > 0 {
+                    if taskListVM.taskCellViewModels.count > 0 || self.presentAddNewItem == true {
                         ForEach(taskListVM.taskCellViewModels) { taskCellVM in
                                 TaskCell(taskCellVM: taskCellVM)
                         }
@@ -32,7 +32,7 @@ struct HomeView: View {
                     }
                     if presentAddNewItem{
                         TaskCell(taskCellVM: TaskCellViewModel(task: Task(title: "", completed: false))) { task in
-                            self.taskListVM.addTask(task: task)
+                    self.taskListVM.addTask(task: task)
                             self.presentAddNewItem.toggle()
                         }
                     }
