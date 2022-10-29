@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TaskCell: View {
+    
     @ObservedObject var taskCellVM: TaskCellViewModel
     
     var onCommit: (Task) -> (Void) = {_ in }
@@ -15,8 +16,9 @@ struct TaskCell: View {
 
     var body: some View {
         HStack {
-            TextField("Enter the task title", text: $taskCellVM.task.title) {
-                self.onCommit(self.taskCellVM.task)
+ TextField("Enter the task title", text: $taskCellVM.task.title, axis: .vertical)
+                    .onSubmit {
+                    self.onCommit(self.taskCellVM.task)
             }
             .strikethrough(self.taskCellVM.task.completed, pattern: .dash, color: .black)
             
