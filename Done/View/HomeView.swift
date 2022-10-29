@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+//MARK: BUG: ilk eklemeden sonraki eklemelerde surekli ilk taskin titleini aliyor
 
 struct HomeView: View {
     @ObservedObject var taskListVM = TaskListViewModel()
@@ -31,8 +32,9 @@ struct HomeView: View {
                             }
                     }
                     if presentAddNewItem{
+                        
                         TaskCell(taskCellVM: TaskCellViewModel(task: Task(title: "", completed: false))) { task in
-                    self.taskListVM.addTask(task: task)
+                            self.taskListVM.addTask(task: task)
                             self.presentAddNewItem.toggle()
                         }
                     }
@@ -52,9 +54,6 @@ struct HomeView: View {
             .sheet(isPresented: $showSignInForm) {
                 LoginView()
             }
-            .navigationBarItems(trailing: Button(action: { self.showSignInForm.toggle()}){
-                Image(systemName: "person.circle")
-            })
             .navigationTitle("Done")
         }
     }

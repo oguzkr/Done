@@ -35,17 +35,17 @@ struct LoginView: View {
                 .foregroundColor(.white)
                 .fixedSize(horizontal: false, vertical: true)
             
-            AppleSignInButton()
-                .padding()
-                .frame(height: 80)
-                .onTapGesture {
-                    self.coordinator = SignInWithAppleCoordinator()
-                    if let coordinator = self.coordinator {
-                        coordinator.startSignInWithAppleFlow {
-                            self.presentationMode.wrappedValue.dismiss()
-                        }
-                    }
-                }
+//            AppleSignInButton()
+//                .padding()
+//                .frame(height: 80)
+//                .onTapGesture {
+//                    self.coordinator = SignInWithAppleCoordinator()
+//                    if let coordinator = self.coordinator {
+//                        coordinator.startSignInWithAppleFlow {
+//                            self.presentationMode.wrappedValue.dismiss()
+//                        }
+//                    }
+//                }
             
             Text("You can also manage your tasks on your Apple Watch")
                 .font(.caption)

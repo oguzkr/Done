@@ -12,37 +12,24 @@ struct TaskCell: View {
     @ObservedObject var taskCellVM: TaskCellViewModel
     
     var onCommit: (Task) -> (Void) = {_ in }
-    
+    @State private var askDelete = false
+
     var body: some View {
         HStack {
-            
-            if #available(iOS 16.0, *) {
-                TextField("Enter the task title", text: $taskCellVM.task.title, axis: .vertical)
+ TextField("Enter the task title", text: $taskCellVM.task.title, axis: .vertical)
                     .onSubmit {
                     self.onCommit(self.taskCellVM.task)
-                }
-            } else {
-                // Fallback on earlier versions
             }
+            .strikethrough(self.taskCellVM.task.completed, pattern: .dash, color: .black)
             
-            Image(systemName: taskCellVM.task.completed ? "checkmark.circle.fill" : "checkmark.circle")
-                .foregroundColor(Color("appBlue"))
-                .frame(width: 40, height: 50)
-                .onTapGesture {
-                    self.taskCellVM.task.completed.toggle()
-                }
-    
-            Button(action: {
-                self.taskCellVM.taskRepository.deleteTask(self.taskCellVM.task)
-            }) {
-                Image(systemName: "trash")
-                    .foregroundColor(Color("appBlue"))
-                    .frame(width: 40, height: 50)
+            if taskCellVM.task.title != "" {
+                TaskCellManageButtons(taskCellVM: self.taskCellVM)
             }
-
         }
     }
 }
+
+
 
 struct TaskCell_Previews: PreviewProvider {
     static var previews: some View {
@@ -62,3 +49,11 @@ struct TaskCell_Previews: PreviewProvider {
 }
 
 
+extension View {
+    @ViewBuilder func hidden(_ shouldHide: Bool) -> some View {
+        switch shouldHide {
+        case true: self.hidden()
+        case false: self
+        }
+    }
+}
