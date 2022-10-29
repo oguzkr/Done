@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D052F5D288095EE007DDB87 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D052F5C288095EE007DDB87 /* TaskCell.swift */; };
 		1D052F5F28809803007DDB87 /* EmptyTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D052F5E28809803007DDB87 /* EmptyTaskView.swift */; };
+		1D164BE7290DB9B000BBA9C9 /* TaskCellManageButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D164BE6290DB9B000BBA9C9 /* TaskCellManageButtons.swift */; };
 		1D32BF46288082DC003FB38F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D32BF45288082DC003FB38F /* GoogleService-Info.plist */; };
 		1DA716D528F73C28002E32AF /* Done_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA716D428F73C28002E32AF /* Done_App.swift */; };
 		1DA716D928F73C29002E32AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA716D828F73C29002E32AF /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		1D052F5C288095EE007DDB87 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		1D052F5E28809803007DDB87 /* EmptyTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTaskView.swift; sourceTree = "<group>"; };
+		1D164BE6290DB9B000BBA9C9 /* TaskCellManageButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellManageButtons.swift; sourceTree = "<group>"; };
 		1D32BF45288082DC003FB38F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1DA716D228F73C28002E32AF /* Done! Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Done! Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA716D428F73C28002E32AF /* Done_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Done_App.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				1DADE8E42880635500F1F495 /* AppleSignInButton.swift */,
 				1D052F5C288095EE007DDB87 /* TaskCell.swift */,
 				1D052F5E28809803007DDB87 /* EmptyTaskView.swift */,
+				1D164BE6290DB9B000BBA9C9 /* TaskCellManageButtons.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				1D052F5F28809803007DDB87 /* EmptyTaskView.swift in Sources */,
 				1DA716F328F7469D002E32AF /* ContentView.swift in Sources */,
 				1DD2837E287DEC850095880A /* Task.swift in Sources */,
+				1D164BE7290DB9B000BBA9C9 /* TaskCellManageButtons.swift in Sources */,
 				1DD28348287C7C5F0095880A /* DoneApp.swift in Sources */,
 				1DADE8E52880635500F1F495 /* AppleSignInButton.swift in Sources */,
 				1DA716EC28F744E5002E32AF /* HomeView.swift in Sources */,
@@ -528,12 +532,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Done/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Done!";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -560,12 +566,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Done/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Done!";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

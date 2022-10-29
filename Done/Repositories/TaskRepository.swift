@@ -24,7 +24,7 @@ class TaskRepository: ObservableObject {
         guard let userId = Auth.auth().currentUser?.uid else { return }
         db.collection("tasks")
             .whereField("userId", isEqualTo: userId)
-            .order(by: "createdTime")
+            .order(by: "completed")
             .addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 self.tasks = querySnapshot.documents.compactMap { document in
