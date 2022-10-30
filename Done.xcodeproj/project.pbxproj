@@ -9,7 +9,15 @@
 /* Begin PBXBuildFile section */
 		1D052F5D288095EE007DDB87 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D052F5C288095EE007DDB87 /* TaskCell.swift */; };
 		1D052F5F28809803007DDB87 /* EmptyTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D052F5E28809803007DDB87 /* EmptyTaskView.swift */; };
+		1D164BE7290DB9B000BBA9C9 /* TaskCellManageButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D164BE6290DB9B000BBA9C9 /* TaskCellManageButtons.swift */; };
 		1D32BF46288082DC003FB38F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D32BF45288082DC003FB38F /* GoogleService-Info.plist */; };
+		1D36B7C4290EACA0002D66CF /* AddTaskPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D36B7C3290EACA0002D66CF /* AddTaskPopUp.swift */; };
+		1DA716D528F73C28002E32AF /* Done_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA716D428F73C28002E32AF /* Done_App.swift */; };
+		1DA716D928F73C29002E32AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA716D828F73C29002E32AF /* Assets.xcassets */; };
+		1DA716DC28F73C29002E32AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA716DB28F73C29002E32AF /* Preview Assets.xcassets */; };
+		1DA716EC28F744E5002E32AF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD28374287C87810095880A /* HomeView.swift */; };
+		1DA716F028F7455F002E32AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA716D628F73C28002E32AF /* ContentView.swift */; };
+		1DA716F328F7469D002E32AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA716D628F73C28002E32AF /* ContentView.swift */; };
 		1DADE8DE287F3E6800F1F495 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1DADE8DD287F3E6800F1F495 /* FirebaseFirestore */; };
 		1DADE8E0287F3E6800F1F495 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1DADE8DF287F3E6800F1F495 /* FirebaseFirestoreSwift */; };
 		1DADE8E3287F3F7400F1F495 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADE8E2287F3F7400F1F495 /* TaskRepository.swift */; };
@@ -23,7 +31,6 @@
 		1DD28363287C80CE0095880A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1DD28362287C80CE0095880A /* FirebaseAuth */; };
 		1DD28366287C81630095880A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 1DD28365287C81630095880A /* GoogleSignIn */; };
 		1DD28373287C87780095880A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD28372287C87780095880A /* LoginView.swift */; };
-		1DD28375287C87810095880A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD28374287C87810095880A /* HomeView.swift */; };
 		1DD2837E287DEC850095880A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2837D287DEC850095880A /* Task.swift */; };
 		1DD28380287DF1E30095880A /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2837F287DF1E30095880A /* TaskCellViewModel.swift */; };
 		1DD28382287DF36D0095880A /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD28381287DF36D0095880A /* TaskListViewModel.swift */; };
@@ -32,7 +39,14 @@
 /* Begin PBXFileReference section */
 		1D052F5C288095EE007DDB87 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		1D052F5E28809803007DDB87 /* EmptyTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTaskView.swift; sourceTree = "<group>"; };
+		1D164BE6290DB9B000BBA9C9 /* TaskCellManageButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellManageButtons.swift; sourceTree = "<group>"; };
 		1D32BF45288082DC003FB38F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1D36B7C3290EACA0002D66CF /* AddTaskPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskPopUp.swift; sourceTree = "<group>"; };
+		1DA716D228F73C28002E32AF /* Done! Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Done! Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DA716D428F73C28002E32AF /* Done_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Done_App.swift; sourceTree = "<group>"; };
+		1DA716D628F73C28002E32AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1DA716D828F73C29002E32AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1DA716DB28F73C29002E32AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1DADE8E2287F3F7400F1F495 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		1DADE8E42880635500F1F495 /* AppleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInButton.swift; sourceTree = "<group>"; };
 		1DADE8E72880754D00F1F495 /* SignInWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleCoordinator.swift; sourceTree = "<group>"; };
@@ -50,6 +64,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1DA716CF28F73C28002E32AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DD28341287C7C5F0095880A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -66,6 +87,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DA716D328F73C28002E32AF /* Done! Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				1DA716D428F73C28002E32AF /* Done_App.swift */,
+				1DA716D628F73C28002E32AF /* ContentView.swift */,
+				1DA716D828F73C29002E32AF /* Assets.xcassets */,
+				1DA716DA28F73C29002E32AF /* Preview Content */,
+			);
+			path = "Done! Watch App";
+			sourceTree = "<group>";
+		};
+		1DA716DA28F73C29002E32AF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1DA716DB28F73C29002E32AF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		1DADE8E1287F3F4800F1F495 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				1DD28346287C7C5F0095880A /* Done */,
+				1DA716D328F73C28002E32AF /* Done! Watch App */,
 				1DD28345287C7C5F0095880A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				1DD28344287C7C5F0095880A /* Done.app */,
+				1DA716D228F73C28002E32AF /* Done! Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +182,8 @@
 				1DADE8E42880635500F1F495 /* AppleSignInButton.swift */,
 				1D052F5C288095EE007DDB87 /* TaskCell.swift */,
 				1D052F5E28809803007DDB87 /* EmptyTaskView.swift */,
+				1D164BE6290DB9B000BBA9C9 /* TaskCellManageButtons.swift */,
+				1D36B7C3290EACA0002D66CF /* AddTaskPopUp.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -164,6 +208,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1DA716D128F73C28002E32AF /* Done! Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DA716DD28F73C29002E32AF /* Build configuration list for PBXNativeTarget "Done! Watch App" */;
+			buildPhases = (
+				1DA716CE28F73C28002E32AF /* Sources */,
+				1DA716CF28F73C28002E32AF /* Frameworks */,
+				1DA716D028F73C28002E32AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Done! Watch App";
+			productName = "Done! Watch App";
+			productReference = 1DA716D228F73C28002E32AF /* Done! Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		1DD28343287C7C5F0095880A /* Done */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DD28352287C7C620095880A /* Build configuration list for PBXNativeTarget "Done" */;
@@ -196,9 +257,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					1DA716D128F73C28002E32AF = {
+						CreatedOnToolsVersion = 14.0;
+					};
 					1DD28343287C7C5F0095880A = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -222,11 +286,21 @@
 			projectRoot = "";
 			targets = (
 				1DD28343287C7C5F0095880A /* Done */,
+				1DA716D128F73C28002E32AF /* Done! Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1DA716D028F73C28002E32AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DA716DC28F73C29002E32AF /* Preview Assets.xcassets in Resources */,
+				1DA716D928F73C29002E32AF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DD28342287C7C5F0095880A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -240,18 +314,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1DA716CE28F73C28002E32AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DA716F028F7455F002E32AF /* ContentView.swift in Sources */,
+				1DA716D528F73C28002E32AF /* Done_App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DD28340287C7C5F0095880A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1DADE8E3287F3F7400F1F495 /* TaskRepository.swift in Sources */,
 				1D052F5F28809803007DDB87 /* EmptyTaskView.swift in Sources */,
+				1DA716F328F7469D002E32AF /* ContentView.swift in Sources */,
 				1DD2837E287DEC850095880A /* Task.swift in Sources */,
+				1D164BE7290DB9B000BBA9C9 /* TaskCellManageButtons.swift in Sources */,
 				1DD28348287C7C5F0095880A /* DoneApp.swift in Sources */,
 				1DADE8E52880635500F1F495 /* AppleSignInButton.swift in Sources */,
+				1DA716EC28F744E5002E32AF /* HomeView.swift in Sources */,
 				1D052F5D288095EE007DDB87 /* TaskCell.swift in Sources */,
+				1D36B7C4290EACA0002D66CF /* AddTaskPopUp.swift in Sources */,
 				1DD28373287C87780095880A /* LoginView.swift in Sources */,
-				1DD28375287C87810095880A /* HomeView.swift in Sources */,
 				1DD28380287DF1E30095880A /* TaskCellViewModel.swift in Sources */,
 				1DD28382287DF36D0095880A /* TaskListViewModel.swift in Sources */,
 				1DADE8E82880754D00F1F495 /* SignInWithAppleCoordinator.swift in Sources */,
@@ -261,6 +347,68 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		1DA716DE28F73C29002E32AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Done! Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = C7WG386WRN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Done!";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		1DA716DF28F73C29002E32AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Done! Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = C7WG386WRN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Done!";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 		1DD28350287C7C620095880A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -388,12 +536,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Done/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Done!";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,12 +570,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Done/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Done!";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,6 +594,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1DA716DD28F73C29002E32AF /* Build configuration list for PBXNativeTarget "Done! Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DA716DE28F73C29002E32AF /* Debug */,
+				1DA716DF28F73C29002E32AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1DD2833F287C7C5F0095880A /* Build configuration list for PBXProject "Done" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
