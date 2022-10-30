@@ -50,6 +50,10 @@ struct HomeView: View {
                     }
                 }
                 .padding()
+                .sheet(isPresented: $presentAddNewItem) {
+                    AddTaskPopUp(taskText: "")
+                }
+                
             }
             .sheet(isPresented: $showSignInForm) {
                 LoginView()
