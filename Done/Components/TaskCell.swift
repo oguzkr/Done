@@ -16,11 +16,9 @@ struct TaskCell: View {
 
     var body: some View {
         HStack {
- TextField("Enter the task title", text: $taskCellVM.task.title, axis: .vertical)
-                    .onSubmit {
+                TextField("Enter the task title", text: $taskCellVM.task.title, axis: .vertical).onSubmit {
                     self.onCommit(self.taskCellVM.task)
-            }
-            .strikethrough(self.taskCellVM.task.completed, pattern: .dash, color: .black)
+                }.strikethrough(self.taskCellVM.task.completed, pattern: .dash, color: .black)
             
             if taskCellVM.task.title != "" {
                 TaskCellManageButtons(taskCellVM: self.taskCellVM)
