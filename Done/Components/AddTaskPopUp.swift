@@ -14,6 +14,8 @@ struct AddTaskPopUp: View {
     var taskColors = [Color("defaultTaskColor"), Color.red, Color.green, Color.blue]
     @State var selectedColor = Color("defaultTaskColor")
     @State var taskText: String
+    @State var addButtonDisabled = false
+
     var body: some View {
         VStack {
             HStack {
@@ -41,9 +43,11 @@ struct AddTaskPopUp: View {
                     Text("Add")
                         .foregroundColor(Color.white)
                 })
+                .disabled(addButtonDisabled)
                 .frame(width: 80)
                 .padding(10)
                 .background(selectedColor == Color("defaultTaskColor") ? .blue : selectedColor)
+                .opacity(addButtonDisabled ? 1 : 0.5)
                 .animation(.easeInOut)
                 .cornerRadius(5)
             }
@@ -56,11 +60,14 @@ struct AddTaskPopUp: View {
                 .animation(.easeInOut)
                 .cornerRadius(10)
                 .focused($keyboardFocused)
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                            keyboardFocused = true
-                        }
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        keyboardFocused = true
                     }
+                }
+                .onChange(of: self.taskText, perform: { value in
+                    addButtonDisabled = value.count > 0 ? true : false
+                })
             HStack {
                 ForEach(taskColors, id: \.self) { taskColor in
                     Circle()
