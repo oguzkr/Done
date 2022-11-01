@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct AddTaskPopUp: View {
+    
     @Environment (\.presentationMode) var presentationMode
     @FocusState private var keyboardFocused: Bool
     @ObservedObject var taskListVM = TaskListViewModel()
-    var taskColors = [Color("defaultTaskColor"), Color.red, Color.green, Color.blue]
-    @State var selectedColor = Color("defaultTaskColor")
+    
+    @State private var selectedColor = Color("defaultTaskColor")
+    @State private var addButtonDisabled = true
     @State var taskText: String
-    @State var addButtonDisabled = false
+    var taskColors = [Color("defaultTaskColor"), Color.red, Color.green, Color.blue]
+
 
     var body: some View {
         VStack {
@@ -47,7 +50,7 @@ struct AddTaskPopUp: View {
                 .frame(width: 80)
                 .padding(10)
                 .background(selectedColor == Color("defaultTaskColor") ? .blue : selectedColor)
-                .opacity(addButtonDisabled ? 1 : 0.5)
+                .opacity(addButtonDisabled ? 0.5 : 1)
                 .animation(.easeInOut)
                 .cornerRadius(5)
             }
@@ -66,7 +69,7 @@ struct AddTaskPopUp: View {
                     }
                 }
                 .onChange(of: self.taskText, perform: { value in
-                    addButtonDisabled = value.count > 0 ? true : false
+                    addButtonDisabled = value.count > 0 ? false : true
                 })
             HStack {
                 ForEach(taskColors, id: \.self) { taskColor in
@@ -92,7 +95,7 @@ struct AddTaskPopUp: View {
 
 struct AddTaskPopUp_Previews: PreviewProvider {
     static var previews: some View {
-        AddTaskPopUp(taskText: "Task skajfkasjf")
+        AddTaskPopUp(taskText: "Destroy the world")
             .padding()
             .previewDisplayName("Add task cell")
     }
