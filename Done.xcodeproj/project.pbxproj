@@ -12,6 +12,8 @@
 		1D164BE7290DB9B000BBA9C9 /* TaskCellManageButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D164BE6290DB9B000BBA9C9 /* TaskCellManageButtons.swift */; };
 		1D32BF46288082DC003FB38F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D32BF45288082DC003FB38F /* GoogleService-Info.plist */; };
 		1D36B7C4290EACA0002D66CF /* AddTaskPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D36B7C3290EACA0002D66CF /* AddTaskPopUp.swift */; };
+		1D7E607C29119A5F0077BA20 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E607B29119A5F0077BA20 /* UIColorExtension.swift */; };
+		1D7E607E29119DF80077BA20 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E607D29119DF80077BA20 /* StringExtension.swift */; };
 		1DA716D528F73C28002E32AF /* Done_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA716D428F73C28002E32AF /* Done_App.swift */; };
 		1DA716D928F73C29002E32AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA716D828F73C29002E32AF /* Assets.xcassets */; };
 		1DA716DC28F73C29002E32AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA716DB28F73C29002E32AF /* Preview Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		1D164BE6290DB9B000BBA9C9 /* TaskCellManageButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellManageButtons.swift; sourceTree = "<group>"; };
 		1D32BF45288082DC003FB38F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1D36B7C3290EACA0002D66CF /* AddTaskPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskPopUp.swift; sourceTree = "<group>"; };
+		1D7E607B29119A5F0077BA20 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		1D7E607D29119DF80077BA20 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1DA716D228F73C28002E32AF /* Done! Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Done! Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA716D428F73C28002E32AF /* Done_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Done_App.swift; sourceTree = "<group>"; };
 		1DA716D628F73C28002E32AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D7E607A29119A420077BA20 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1D7E607B29119A5F0077BA20 /* UIColorExtension.swift */,
+				1D7E607D29119DF80077BA20 /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1DA716D328F73C28002E32AF /* Done! Watch App */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +162,7 @@
 				1DD2835D287C80600095880A /* View */,
 				1DD28371287C87530095880A /* ViewModel */,
 				1DD2837C287DEC7D0095880A /* Model */,
+				1D7E607A29119A420077BA20 /* Extensions */,
 				1DD28367287C83060095880A /* Components */,
 				1DD2835C287C80420095880A /* Info.plist */,
 				1D32BF45288082DC003FB38F /* GoogleService-Info.plist */,
@@ -329,7 +343,9 @@
 			files = (
 				1DADE8E3287F3F7400F1F495 /* TaskRepository.swift in Sources */,
 				1D052F5F28809803007DDB87 /* EmptyTaskView.swift in Sources */,
+				1D7E607C29119A5F0077BA20 /* UIColorExtension.swift in Sources */,
 				1DA716F328F7469D002E32AF /* ContentView.swift in Sources */,
+				1D7E607E29119DF80077BA20 /* StringExtension.swift in Sources */,
 				1DD2837E287DEC850095880A /* Task.swift in Sources */,
 				1D164BE7290DB9B000BBA9C9 /* TaskCellManageButtons.swift in Sources */,
 				1DD28348287C7C5F0095880A /* DoneApp.swift in Sources */,

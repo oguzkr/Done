@@ -11,31 +11,31 @@ struct AddTaskPopUp: View {
     @Environment (\.presentationMode) var presentationMode
     @FocusState private var keyboardFocused: Bool
     @ObservedObject var taskListVM = TaskListViewModel()
-
+    var taskColors = [Color("defaultTaskColor"), Color.red, Color.green, Color.blue]
+    @State var selectedColor = Color("defaultTaskColor")
     @State var taskText: String
     var body: some View {
         VStack {
             HStack {
                 Button(action: {
-                    //TODO: CLOSE POPUP
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text("Cancel")
-                        .foregroundColor(Color.blue)
+                        .foregroundColor(selectedColor == Color("defaultTaskColor") ? .blue : selectedColor)
+                        .animation(.easeInOut)
                         .frame(width: 80)
-                    
-                    
                 })
                 
                 .padding(10)
                 .background(Color.white)
                 .overlay(
                         RoundedRectangle(cornerRadius: 5)
-                            .stroke(.blue, lineWidth: 1)
+                            .stroke(selectedColor == Color("defaultTaskColor") ? .blue : selectedColor, lineWidth: 1)
+                            .animation(.easeInOut)
                 )
                 Spacer(minLength: 10)
                 Button(action: {
-                    self.taskListVM.addTask(task: Task(title: self.taskText, completed: false))
+                    self.taskListVM.addTask(task: Task(title: self.taskText, completed: false, color: selectedColor.description))
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text("Add")
@@ -43,7 +43,8 @@ struct AddTaskPopUp: View {
                 })
                 .frame(width: 80)
                 .padding(10)
-                .background(Color.blue)
+                .background(selectedColor == Color("defaultTaskColor") ? .blue : selectedColor)
+                .animation(.easeInOut)
                 .cornerRadius(5)
             }
             Spacer(minLength: 20)
@@ -51,7 +52,8 @@ struct AddTaskPopUp: View {
                 .frame(maxWidth:.infinity, maxHeight: .infinity)
                 .padding(EdgeInsets(top:10, leading:10, bottom: 10, trailing: 30))
                 .scrollContentBackground(.hidden)
-                .background(Color("textBackground"))
+                .background(selectedColor)
+                .animation(.easeInOut)
                 .cornerRadius(10)
                 .focused($keyboardFocused)
                     .onAppear {
@@ -59,8 +61,25 @@ struct AddTaskPopUp: View {
                             keyboardFocused = true
                         }
                     }
+            HStack {
+                ForEach(taskColors, id: \.self) { taskColor in
+                    Circle()
+                        .strokeBorder(.black.opacity(0.4), lineWidth:3)
+                        .background(Circle().fill(taskColor))
+                        .frame(width: 40, height: 40)
+                        .onTapGesture {
+                            selectedColor = taskColor
+                        }
+                    Spacer()
+                }
+            }
         }
+        
+        
+
         .padding(25)
+        
+        
     }
 }
 
