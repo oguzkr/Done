@@ -19,7 +19,6 @@
 		1DA716DC28F73C29002E32AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA716DB28F73C29002E32AF /* Preview Assets.xcassets */; };
 		1DA716EC28F744E5002E32AF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD28374287C87810095880A /* HomeView.swift */; };
 		1DA716F028F7455F002E32AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA716D628F73C28002E32AF /* ContentView.swift */; };
-		1DA716F328F7469D002E32AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA716D628F73C28002E32AF /* ContentView.swift */; };
 		1DADE8DE287F3E6800F1F495 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1DADE8DD287F3E6800F1F495 /* FirebaseFirestore */; };
 		1DADE8E0287F3E6800F1F495 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1DADE8DF287F3E6800F1F495 /* FirebaseFirestoreSwift */; };
 		1DADE8E3287F3F7400F1F495 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADE8E2287F3F7400F1F495 /* TaskRepository.swift */; };
@@ -344,7 +343,6 @@
 				1DADE8E3287F3F7400F1F495 /* TaskRepository.swift in Sources */,
 				1D052F5F28809803007DDB87 /* EmptyTaskView.swift in Sources */,
 				1D7E607C29119A5F0077BA20 /* UIColorExtension.swift in Sources */,
-				1DA716F328F7469D002E32AF /* ContentView.swift in Sources */,
 				1D7E607E29119DF80077BA20 /* StringExtension.swift in Sources */,
 				1DD2837E287DEC850095880A /* Task.swift in Sources */,
 				1D164BE7290DB9B000BBA9C9 /* TaskCellManageButtons.swift in Sources */,
