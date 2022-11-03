@@ -38,6 +38,17 @@ struct HomeView: View {
                         .onTapGesture {
                             self.presentAddNewItem.toggle()
                         }
+                    }
+                }
+                Button(action: {
+                    self.presentAddNewItem.toggle()
+                }) {
+                    HStack {
+                        Image(systemName: "plus.circle.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                        Text("addNewTask")
+                    }
                 }
             }
                 

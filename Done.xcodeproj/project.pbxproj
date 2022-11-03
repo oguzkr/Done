@@ -35,6 +35,7 @@
 		1DD2837E287DEC850095880A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2837D287DEC850095880A /* Task.swift */; };
 		1DD28380287DF1E30095880A /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2837F287DF1E30095880A /* TaskCellViewModel.swift */; };
 		1DD28382287DF36D0095880A /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD28381287DF36D0095880A /* TaskListViewModel.swift */; };
+		D9E3AEFA290EE94500F652D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9E3AEFC290EE94500F652D0 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,8 @@
 		1DD2837D287DEC850095880A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		1DD2837F287DF1E30095880A /* TaskCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
 		1DD28381287DF36D0095880A /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
+		D9E3AEFB290EE94500F652D0 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D9E3AEFD290EE94F00F652D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,7 @@
 				1DD28367287C83060095880A /* Components */,
 				1DD2835C287C80420095880A /* Info.plist */,
 				1D32BF45288082DC003FB38F /* GoogleService-Info.plist */,
+				D9E3AEFC290EE94500F652D0 /* Localizable.strings */,
 				1DD28347287C7C5F0095880A /* DoneApp.swift */,
 				1DD2834B287C7C620095880A /* Assets.xcassets */,
 				1DD2834D287C7C620095880A /* Preview Content */,
@@ -288,6 +292,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = 1DD2833B287C7C5F0095880A;
 			packageReferences = (
@@ -319,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DD2834F287C7C620095880A /* Preview Assets.xcassets in Resources */,
+				D9E3AEFA290EE94500F652D0 /* Localizable.strings in Resources */,
 				1DD2834C287C7C620095880A /* Assets.xcassets in Resources */,
 				1D32BF46288082DC003FB38F /* GoogleService-Info.plist in Resources */,
 			);
@@ -359,6 +365,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D9E3AEFC290EE94500F652D0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9E3AEFB290EE94500F652D0 /* tr */,
+				D9E3AEFD290EE94F00F652D0 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1DA716DE28F73C29002E32AF /* Debug */ = {

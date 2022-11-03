@@ -27,7 +27,7 @@ struct AddTaskPopUp: View {
                 Button(action: {
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Text("Cancel")
+                    Text("cancel")
                         .foregroundColor(selectedColor == Color("defaultTaskColor") ? .blue : selectedColor)
                         .animation(.easeInOut)
                         .frame(width: 80)
@@ -54,7 +54,7 @@ struct AddTaskPopUp: View {
                     }
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Text(taskToEdit?.title.isEmpty ?? true ? "Add" : "Update")
+                    Text(taskToEdit?.title.isEmpty ?? true ? "add" : "Update") //update icin localization yap
                         .foregroundColor(Color.white)
                 })
                 .disabled(addButtonDisabled && taskToEdit?.title.isEmpty ?? true)
