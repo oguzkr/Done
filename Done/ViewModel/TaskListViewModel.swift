@@ -29,6 +29,10 @@ class TaskListViewModel: ObservableObject {
         taskRepository.addTask(task)
     }
     
+    func updateTask(task: Task) {
+        taskRepository.updateTask(task)
+    }
+    
     func removeTask(task: Task) {
         taskRepository.deleteTask(task)
     }

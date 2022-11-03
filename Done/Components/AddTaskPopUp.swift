@@ -13,9 +13,11 @@ struct AddTaskPopUp: View {
     @FocusState private var keyboardFocused: Bool
     @ObservedObject var taskListVM = TaskListViewModel()
     
-    @State private var selectedColor = Color("defaultTaskColor")
+    @State var selectedColor = Color("defaultTaskColor")
     @State private var addButtonDisabled = true
     @State var taskText: String
+    @State var taskToEdit: Task?
+
     var taskColors = [Color("defaultTaskColor"), Color.red, Color.green, Color.blue]
 
 
@@ -40,17 +42,26 @@ struct AddTaskPopUp: View {
                 )
                 Spacer(minLength: 10)
                 Button(action: {
-                    self.taskListVM.addTask(task: Task(title: self.taskText, completed: false, color: selectedColor.description))
+                    if let taskToEdit {
+                        self.taskListVM.updateTask(task: Task(
+                            id: taskToEdit.id,
+                            title: taskToEdit.title,
+                            completed: taskToEdit.completed,
+                            userId: taskToEdit.userId,
+                            color: selectedColor.description))
+                    } else {
+                        self.taskListVM.addTask(task: Task(title: self.taskText, completed: false, color: selectedColor.description))
+                    }
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Text("Add")
+                    Text(taskToEdit?.title.isEmpty ?? true ? "Add" : "Update")
                         .foregroundColor(Color.white)
                 })
-                .disabled(addButtonDisabled)
+                .disabled(addButtonDisabled && taskToEdit?.title.isEmpty ?? true)
                 .frame(width: 80)
                 .padding(10)
                 .background(selectedColor == Color("defaultTaskColor") ? .blue : selectedColor)
-                .opacity(addButtonDisabled ? 0.5 : 1)
+                .opacity(addButtonDisabled && taskToEdit?.title.isEmpty ?? true ? 0.5 : 1)
                 .animation(.easeInOut)
                 .cornerRadius(5)
             }
@@ -70,6 +81,7 @@ struct AddTaskPopUp: View {
                 }
                 .onChange(of: self.taskText, perform: { value in
                     addButtonDisabled = value.count > 0 ? false : true
+                    taskToEdit?.title = value
                 })
             HStack {
                 ForEach(taskColors, id: \.self) { taskColor in
