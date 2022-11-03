@@ -19,7 +19,7 @@ struct EmptyTaskView: View {
                     .font(.system(size: 50))
                     .frame(width: 80, height: 80)
             }
-            Text("Add your first task")
+            Text("addYourFirstTask")
                 .foregroundColor(Color("appBlue"))
                 .font(.title)
         }.padding()

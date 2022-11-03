@@ -20,7 +20,7 @@ struct AddTaskPopUp: View {
                     //TODO: CLOSE POPUP
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Text("Cancel")
+                    Text("cancel")
                         .foregroundColor(Color.blue)
                         .frame(width: 80)
                     
@@ -38,7 +38,7 @@ struct AddTaskPopUp: View {
                     self.taskListVM.addTask(task: Task(title: self.taskText, completed: false))
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Text("Add")
+                    Text("add")
                         .foregroundColor(Color.white)
                 })
                 .frame(width: 80)

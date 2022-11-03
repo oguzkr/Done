@@ -46,7 +46,7 @@ struct HomeView: View {
                         Image(systemName: "plus.circle.fill")
                             .resizable()
                             .frame(width: 20, height: 20)
-                        Text("Add New Task")
+                        Text("addNewTask")
                     }
                 }
                 .padding()
