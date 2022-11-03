@@ -19,22 +19,23 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
+            if taskListVM.taskCellViewModels.count > 0 || self.presentAddNewItem == true {
                 List {
-                    if taskListVM.taskCellViewModels.count > 0 || self.presentAddNewItem == true {
-                        ForEach(taskListVM.taskCellViewModels) { taskCellVM in
-                                TaskCell(taskCellVM: taskCellVM)
-                        }
-                    } else {
-                        EmptyTaskView()
-                            .frame(width: 300, height: 300, alignment: .center)
-                            .onTapGesture {
-                                self.presentAddNewItem.toggle()
-                            }
+                    ForEach(taskListVM.taskCellViewModels) { taskCellVM in
+                        TaskCell(taskCellVM: taskCellVM)
+                            .padding(10)
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(Color.clear)
+                            .background(Color(uiColor: taskCellVM.task.color?.name ?? UIColor(Color("defaultTaskColor"))))
+                            .cornerRadius(5)
                     }
-                    if presentAddNewItem{
-                        
-                        TaskCell(taskCellVM: TaskCellViewModel(task: Task(title: "", completed: false))) { task in
-                            self.taskListVM.addTask(task: task)
+                }.listStyle(.plain)
+            }
+            else {
+                List {
+                    EmptyTaskView()
+                        .frame(width: 300, height: 300, alignment: .center)
+                        .onTapGesture {
                             self.presentAddNewItem.toggle()
                         }
                     }
@@ -49,10 +50,22 @@ struct HomeView: View {
                         Text("addNewTask")
                     }
                 }
-                .padding()
-                .sheet(isPresented: $presentAddNewItem) {
-                    AddTaskPopUp(taskText: "")
+            }
+                
+            Button(action: {
+                self.presentAddNewItem.toggle()
+            }) {
+                HStack {
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                    Text("Add New Task")
                 }
+            }
+            .padding()
+            .sheet(isPresented: $presentAddNewItem) {
+                AddTaskPopUp(taskText: "")
+            }
                 
             }
             .sheet(isPresented: $showSignInForm) {
@@ -61,11 +74,11 @@ struct HomeView: View {
             .navigationTitle("Done")
         }
     }
-}
+    }
 
-struct HomeView_Previews: PreviewProvider {
+    struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
     }
-}
+    }
 

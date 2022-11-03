@@ -8,42 +8,61 @@
 import SwiftUI
 
 struct AddTaskPopUp: View {
+    
     @Environment (\.presentationMode) var presentationMode
     @FocusState private var keyboardFocused: Bool
     @ObservedObject var taskListVM = TaskListViewModel()
-
+    
+    @State var selectedColor = Color("defaultTaskColor")
+    @State private var addButtonDisabled = true
     @State var taskText: String
+    @State var taskToEdit: Task?
+
+    var taskColors = [Color("defaultTaskColor"), Color.red, Color.green, Color.blue]
+
+
     var body: some View {
         VStack {
             HStack {
                 Button(action: {
-                    //TODO: CLOSE POPUP
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text("cancel")
-                        .foregroundColor(Color.blue)
+                        .foregroundColor(selectedColor == Color("defaultTaskColor") ? .blue : selectedColor)
+                        .animation(.easeInOut)
                         .frame(width: 80)
-                    
-                    
                 })
                 
                 .padding(10)
                 .background(Color.white)
                 .overlay(
                         RoundedRectangle(cornerRadius: 5)
-                            .stroke(.blue, lineWidth: 1)
+                            .stroke(selectedColor == Color("defaultTaskColor") ? .blue : selectedColor, lineWidth: 1)
+                            .animation(.easeInOut)
                 )
                 Spacer(minLength: 10)
                 Button(action: {
-                    self.taskListVM.addTask(task: Task(title: self.taskText, completed: false))
+                    if let taskToEdit {
+                        self.taskListVM.updateTask(task: Task(
+                            id: taskToEdit.id,
+                            title: taskToEdit.title,
+                            completed: taskToEdit.completed,
+                            userId: taskToEdit.userId,
+                            color: selectedColor.description))
+                    } else {
+                        self.taskListVM.addTask(task: Task(title: self.taskText, completed: false, color: selectedColor.description))
+                    }
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Text("add")
+                    Text(taskToEdit?.title.isEmpty ?? true ? "add" : "Update") //update icin localization yap
                         .foregroundColor(Color.white)
                 })
+                .disabled(addButtonDisabled && taskToEdit?.title.isEmpty ?? true)
                 .frame(width: 80)
                 .padding(10)
-                .background(Color.blue)
+                .background(selectedColor == Color("defaultTaskColor") ? .blue : selectedColor)
+                .opacity(addButtonDisabled && taskToEdit?.title.isEmpty ?? true ? 0.5 : 1)
+                .animation(.easeInOut)
                 .cornerRadius(5)
             }
             Spacer(minLength: 20)
@@ -51,22 +70,44 @@ struct AddTaskPopUp: View {
                 .frame(maxWidth:.infinity, maxHeight: .infinity)
                 .padding(EdgeInsets(top:10, leading:10, bottom: 10, trailing: 30))
                 .scrollContentBackground(.hidden)
-                .background(Color("textBackground"))
+                .background(selectedColor)
+                .animation(.easeInOut)
                 .cornerRadius(10)
                 .focused($keyboardFocused)
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                            keyboardFocused = true
-                        }
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        keyboardFocused = true
                     }
+                }
+                .onChange(of: self.taskText, perform: { value in
+                    addButtonDisabled = value.count > 0 ? false : true
+                    taskToEdit?.title = value
+                })
+            HStack {
+                ForEach(taskColors, id: \.self) { taskColor in
+                    Circle()
+                        .strokeBorder(.black.opacity(0.4), lineWidth:3)
+                        .background(Circle().fill(taskColor))
+                        .frame(width: 40, height: 40)
+                        .onTapGesture {
+                            selectedColor = taskColor
+                        }
+                    Spacer()
+                }
+            }
         }
+        
+        
+
         .padding(25)
+        
+        
     }
 }
 
 struct AddTaskPopUp_Previews: PreviewProvider {
     static var previews: some View {
-        AddTaskPopUp(taskText: "Task skajfkasjf")
+        AddTaskPopUp(taskText: "Destroy the world")
             .padding()
             .previewDisplayName("Add task cell")
     }

@@ -9,12 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var text = "HAHAHAHA"
+
     var body: some View {
         VStack {
-            Image(systemName: "trash")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("ZAAAAA")
+           
+            Button {
+                text = "NO."
+            } label: {
+                Text("click here")
+            }
+            Spacer(minLength: 10)
+            Text(text)
         }
         .padding()
     }

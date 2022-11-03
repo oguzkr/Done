@@ -19,19 +19,21 @@ struct TaskCellManageButtons: View {
                 .onTapGesture {
                 self.taskCellVM.task.completed.toggle()
             }
-        
-            Button {
-                self.askDelete = true
-            } label: {
-                Image(systemName: "trash")
-                    .foregroundColor(Color("appBlue"))
-                    .frame(width: 40, height: 50)
-            }.alert("Are you sure you want to delete this task?", isPresented: self.$askDelete) {
-                Button("Yes") {
-                    self.taskCellVM.taskRepository.deleteTask(self.taskCellVM.task)
+            
+            Image(systemName: "trash")
+                .foregroundColor(Color("appBlue"))
+                .frame(width: 40, height: 50)
+                .onTapGesture {
+                self.askDelete.toggle()
                 }
-                Button("No", role: .cancel) { }
-            }
+                .alert("Are you sure you want to delete this task?", isPresented: self.$askDelete) {
+                    Button("Yes") {
+                        self.taskCellVM.taskRepository.deleteTask(self.taskCellVM.task)
+                    }
+                    Button("No", role: .cancel) { }
+                }
+
+
         }
     }
 }
