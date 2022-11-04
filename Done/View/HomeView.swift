@@ -40,17 +40,6 @@ struct HomeView: View {
                         }
                     }
                 }
-                Button(action: {
-                    self.presentAddNewItem.toggle()
-                }) {
-                    HStack {
-                        Image(systemName: "plus.circle.fill")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                        Text("addNewTask")
-                    }
-                }
-            }
                 
             Button(action: {
                 self.presentAddNewItem.toggle()
@@ -59,7 +48,7 @@ struct HomeView: View {
                     Image(systemName: "plus.circle.fill")
                         .resizable()
                         .frame(width: 20, height: 20)
-                    Text("Add New Task")
+                    Text("addNewTask")
                 }
             }
             .padding()
@@ -74,11 +63,12 @@ struct HomeView: View {
             .navigationTitle("Done")
         }
     }
-    }
+}
 
-    struct HomeView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
     }
-    }
+    
+}
 

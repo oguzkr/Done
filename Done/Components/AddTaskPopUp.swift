@@ -19,8 +19,11 @@ struct AddTaskPopUp: View {
     @State var taskToEdit: Task?
 
     var taskColors = [Color("defaultTaskColor"), Color.red, Color.green, Color.blue]
-
-
+    
+    //3 tane string iceren array
+    //fonksiyon degerleri gradiente ceviren string -> LinearGradient color veren
+    //
+    
     var body: some View {
         VStack {
             HStack {
@@ -54,7 +57,7 @@ struct AddTaskPopUp: View {
                     }
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Text(taskToEdit?.title.isEmpty ?? true ? "add" : "Update") //update icin localization yap
+                    Text(taskToEdit?.title.isEmpty ?? true ? "add" : "update") 
                         .foregroundColor(Color.white)
                 })
                 .disabled(addButtonDisabled && taskToEdit?.title.isEmpty ?? true)
@@ -96,12 +99,7 @@ struct AddTaskPopUp: View {
                 }
             }
         }
-        
-        
-
         .padding(25)
-        
-        
     }
 }
 
