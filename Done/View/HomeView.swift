@@ -6,16 +6,18 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct HomeView: View {
     @ObservedObject var taskListVM = TaskListViewModel()
     
     let tasks = testDataTasks
-    
+    let sharedUserDefaults = UserDefaults(suiteName: SharedUserDefaults.suiteName)
     @State var presentAddNewItem = false
     @State var showSignInForm = false
     
     var body: some View {
+       
         NavigationView {
             VStack(alignment: .leading) {
                 if taskListVM.taskCellViewModels.count > 0 || self.presentAddNewItem == true {
@@ -27,7 +29,9 @@ struct HomeView: View {
                                 .background(LinearGradient(gradient: Gradient(colors: taskCellVM.task.color?.toGradientColor ?? [Color(uiColor: UIColor(named: "defaultTaskColor") ?? .clear)]), startPoint: .topLeading, endPoint: .bottomTrailing))
                                 .cornerRadius(5)
                         }
-                    }.listStyle(.plain)
+                    }
+                    .onAppear(perform: fetch)
+                    .listStyle(.plain)
                 }
                 else {
                     List {
@@ -56,6 +60,21 @@ struct HomeView: View {
                 }
             }
             .navigationTitle("Done")
+        }
+    }
+    
+    func fetch(){
+        var tasks = [SharedUserDefaults.Task]()
+        for taskVM in taskListVM.taskCellViewModels {
+            tasks.append(SharedUserDefaults.Task(id: taskVM.task.id,
+                                                 title: taskVM.task.title,
+                                                 completed: taskVM.task.completed,
+                                                 color: taskVM.task.color))
+        }
+        if let encodedData = try? JSONEncoder().encode(tasks) {
+            sharedUserDefaults?.set(encodedData, forKey: SharedUserDefaults.Keys.tasks)
+            WidgetCenter.shared.reloadAllTimelines()
+            print("RELOADING DATA FOR WIDGET")
         }
     }
 }

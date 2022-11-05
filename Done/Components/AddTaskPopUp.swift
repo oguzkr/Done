@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct AddTaskPopUp: View {
     
@@ -16,7 +17,8 @@ struct AddTaskPopUp: View {
     @State private var addButtonDisabled = true
     @State var taskText: String
     @State var taskToEdit: Task?
-    
+    let sharedUserDefaults = UserDefaults(suiteName: SharedUserDefaults.suiteName)
+
     let taskColorsGradients = ["defaultTaskColor",
                                       "redToGreen",
                                       "blueToGreen",
@@ -56,6 +58,7 @@ struct AddTaskPopUp: View {
                     } else {
                         self.taskListVM.addTask(task: Task(title: self.taskText, completed: false, color: selectedColor.description))
                     }
+                    self.fetch()
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text(taskToEdit?.title.isEmpty ?? true ? "add" : "Update") //update icin localization yap
@@ -101,6 +104,21 @@ struct AddTaskPopUp: View {
             }
         }
         .padding(25)
+    }
+    
+    func fetch(){
+        var tasks = [SharedUserDefaults.Task]()
+        for taskVM in taskListVM.taskCellViewModels {
+            tasks.append(SharedUserDefaults.Task(id: taskVM.task.id,
+                                                 title: taskVM.task.title,
+                                                 completed: taskVM.task.completed,
+                                                 color: taskVM.task.color))
+        }
+        if let encodedData = try? JSONEncoder().encode(tasks) {
+            sharedUserDefaults?.set(encodedData, forKey: SharedUserDefaults.Keys.tasks)
+            WidgetCenter.shared.reloadAllTimelines()
+            print("RELOADING DATA FOR WIDGET")
+        }
     }
 
 }
