@@ -24,7 +24,7 @@ struct HomeView: View {
                             TaskCell(taskCellVM: taskCellVM)
                                 .padding(10)
                                 .listRowSeparator(.hidden)
-                                .background(Color(uiColor: taskCellVM.task.color?.name ?? UIColor(Color("defaultTaskColor"))))
+                                .background(LinearGradient(gradient: Gradient(colors: taskCellVM.task.color?.toGradientColor ?? [Color(uiColor: UIColor(named: "defaultTaskColor") ?? .clear)]), startPoint: .topLeading, endPoint: .bottomTrailing))
                                 .cornerRadius(5)
                         }
                     }.listStyle(.plain)

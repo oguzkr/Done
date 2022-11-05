@@ -12,14 +12,10 @@ struct AddTaskPopUp: View {
     @Environment (\.presentationMode) var presentationMode
     @FocusState private var keyboardFocused: Bool
     @ObservedObject var taskListVM = TaskListViewModel()
-    
-    @State var selectedColor = Color("defaultTaskColor")
+    @State var selectedColor = "defaultTaskColor"
     @State private var addButtonDisabled = true
     @State var taskText: String
     @State var taskToEdit: Task?
-
-    var taskColors = [Color("defaultTaskColor"), Color.red, Color.green, Color.blue]
-
 
     var body: some View {
         VStack {
@@ -27,17 +23,22 @@ struct AddTaskPopUp: View {
                 Button(action: {
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Text("cancel")
-                        .foregroundColor(selectedColor == Color("defaultTaskColor") ? .blue : selectedColor)
-                        .animation(.easeInOut)
-                        .frame(width: 80)
+                    LinearGradient(
+                        colors: ColorHelper.customizedButtonColor(selectedColor),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                    .frame(width: 80, height: 25)
+                    .mask(
+                        Text("cancel")
+                            .multilineTextAlignment(.center)
+                    )
                 })
-                
                 .padding(10)
                 .overlay(
-                        RoundedRectangle(cornerRadius: 5)
-                            .stroke(selectedColor == Color("defaultTaskColor") ? .blue : selectedColor, lineWidth: 1)
-                            .animation(.easeInOut)
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(LinearGradient(gradient: Gradient(colors: selectedColor.toGradientColor), startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 1)
+                        .animation(.easeInOut)
                 )
                 Spacer(minLength: 10)
                 Button(action: {
@@ -54,14 +55,14 @@ struct AddTaskPopUp: View {
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text(taskToEdit?.title.isEmpty ?? true ? "add" : "Update") //update icin localization yap
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color(uiColor: UIColor(named: "textColor") ?? .clear))
+                        .frame(width: 80, height: 25)
                 })
                 .disabled(addButtonDisabled && taskToEdit?.title.isEmpty ?? true)
                 .frame(width: 80)
                 .padding(10)
-                .background(selectedColor == Color("defaultTaskColor") ? .blue : selectedColor)
+                .background(LinearGradient(gradient: Gradient(colors: selectedColor.toGradientColor), startPoint: .topLeading, endPoint: .bottomTrailing))
                 .opacity(addButtonDisabled && taskToEdit?.title.isEmpty ?? true ? 0.5 : 1)
-                .animation(.easeInOut)
                 .cornerRadius(5)
             }
             Spacer(minLength: 20)
@@ -69,8 +70,8 @@ struct AddTaskPopUp: View {
                 .frame(maxWidth:.infinity, maxHeight: .infinity)
                 .padding(EdgeInsets(top:10, leading:10, bottom: 10, trailing: 30))
                 .scrollContentBackground(.hidden)
-                .background(selectedColor)
-                .animation(.easeInOut)
+                .foregroundColor(Color(uiColor: UIColor(named: "textColor") ?? .clear))
+                .background(LinearGradient(gradient: Gradient(colors: selectedColor.toGradientColor), startPoint: .topLeading, endPoint: .bottomTrailing))
                 .cornerRadius(10)
                 .focused($keyboardFocused)
                 .onAppear {
@@ -83,10 +84,10 @@ struct AddTaskPopUp: View {
                     taskToEdit?.title = value
                 })
             HStack {
-                ForEach(taskColors, id: \.self) { taskColor in
+                ForEach(ColorHelper.taskColorsGradients, id: \.self) { taskColor in
                     Circle()
                         .strokeBorder(.black.opacity(0.4), lineWidth:3)
-                        .background(Circle().fill(taskColor))
+                        .background(Circle().fill(LinearGradient(gradient: Gradient(colors: taskColor.toGradientColor), startPoint: .topLeading, endPoint: .bottomTrailing)))
                         .frame(width: 40, height: 40)
                         .onTapGesture {
                             selectedColor = taskColor
@@ -95,13 +96,9 @@ struct AddTaskPopUp: View {
                 }
             }
         }
-        
-        
-
         .padding(25)
-        
-        
     }
+
 }
 
 struct AddTaskPopUp_Previews: PreviewProvider {

@@ -9,13 +9,14 @@ import UIKit
 import SwiftUI
 
 extension String {
-    var name: UIColor {
+    var toGradientColor: [Color] {
         switch self {
-        case "red": return UIColor.red
-        case "blue": return UIColor.blue
-        case "green": return UIColor.green
-        case "clean": return UIColor(Color("defaultTaskColor"))
-        default: return UIColor(Color("defaultTaskColor"))
+        case "redToGreen": return [.red, .green]
+        case "blueToGreen": return [.blue, .green]
+        case "blueToRed": return [.blue, .red]
+        case "defaultTaskColor": return [Color("defaultTaskColor")]
+        case "defaultTextColor": return [Color.white]
+        default: return [Color("defaultTaskColor")]
         }
     }
 }
