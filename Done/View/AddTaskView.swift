@@ -1,5 +1,5 @@
 //
-//  AddTaskPopUp.swift
+//  AddTaskView.swift
 //  Done
 //
 //  Created by Oğuz Karatoruk on 30.10.2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 import WidgetKit
 
-struct AddTaskPopUp: View {
+struct AddTaskView: View {
     
     @Environment (\.presentationMode) var presentationMode
     @FocusState private var keyboardFocused: Bool
@@ -124,7 +124,7 @@ struct AddTaskPopUp: View {
 
 struct AddTaskPopUp_Previews: PreviewProvider {
     static var previews: some View {
-        AddTaskPopUp(taskText: "Destroy the world")
+        AddTaskView(taskText: "Destroy the world")
             .padding()
             .previewDisplayName("Add task cell")
     }

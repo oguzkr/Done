@@ -56,7 +56,7 @@ struct HomeView: View {
                 }
                 .padding()
                 .sheet(isPresented: $presentAddNewItem) {
-                    AddTaskPopUp(taskText: "")
+                    AddTaskView(taskText: "")
                 }
             }
             .navigationTitle("Done")

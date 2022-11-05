@@ -22,7 +22,7 @@ struct TaskCell: View {
                 .strikethrough(self.taskCellVM.task.completed, pattern: .dash, color: .black)
                 .contentShape(Rectangle())
                 .sheet(isPresented: $presentAddNewItem) {
-                    AddTaskPopUp(
+                    AddTaskView(
                         selectedColor: taskCellVM.task.color ?? "defaultTaskColor",
                         taskText: taskCellVM.task.title,
                         taskToEdit: taskCellVM.task)
