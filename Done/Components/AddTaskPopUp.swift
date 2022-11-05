@@ -34,7 +34,6 @@ struct AddTaskPopUp: View {
                 })
                 
                 .padding(10)
-                .background(Color.white)
                 .overlay(
                         RoundedRectangle(cornerRadius: 5)
                             .stroke(selectedColor == Color("defaultTaskColor") ? .blue : selectedColor, lineWidth: 1)

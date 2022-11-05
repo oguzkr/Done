@@ -24,7 +24,6 @@ struct HomeView: View {
                             TaskCell(taskCellVM: taskCellVM)
                                 .padding(10)
                                 .listRowSeparator(.hidden)
-                                .listRowBackground(Color.clear)
                                 .background(Color(uiColor: taskCellVM.task.color?.name ?? UIColor(Color("defaultTaskColor"))))
                                 .cornerRadius(5)
                         }
