@@ -42,7 +42,9 @@
 		904BA50029167E9100211064 /* DoneWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 904BA4F029167E8F00211064 /* DoneWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		904BA5072916878D00211064 /* SharedUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA5062916878D00211064 /* SharedUserDefaults.swift */; };
 		904BA5082916878D00211064 /* SharedUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA5062916878D00211064 /* SharedUserDefaults.swift */; };
-		904BA5092916983800211064 /* DoneWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA4F929167E8F00211064 /* DoneWidget.swift */; };
+		904BA50B2916BE3400211064 /* DoneWidgetTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA50A2916BE3400211064 /* DoneWidgetTaskCell.swift */; };
+		904BA50C2916BE3400211064 /* DoneWidgetTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA50A2916BE3400211064 /* DoneWidgetTaskCell.swift */; };
+		904BA50D2916BF6300211064 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E607D29119DF80077BA20 /* StringExtension.swift */; };
 		D9E3AEFA290EE94500F652D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9E3AEFC290EE94500F652D0 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +107,7 @@
 		904BA4FD29167E9100211064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		904BA5052916877200211064 /* DoneWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DoneWidgetExtension.entitlements; sourceTree = "<group>"; };
 		904BA5062916878D00211064 /* SharedUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUserDefaults.swift; sourceTree = "<group>"; };
+		904BA50A2916BE3400211064 /* DoneWidgetTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneWidgetTaskCell.swift; sourceTree = "<group>"; };
 		D9E3AEFB290EE94500F652D0 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9E3AEFD290EE94F00F652D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -287,8 +290,9 @@
 		904BA4F629167E8F00211064 /* DoneWidget */ = {
 			isa = PBXGroup;
 			children = (
-				904BA4F729167E8F00211064 /* DoneWidgetBundle.swift */,
 				904BA4F929167E8F00211064 /* DoneWidget.swift */,
+				904BA50A2916BE3400211064 /* DoneWidgetTaskCell.swift */,
+				904BA4F729167E8F00211064 /* DoneWidgetBundle.swift */,
 				904BA4FB29167E9100211064 /* Assets.xcassets */,
 				904BA4FD29167E9100211064 /* Info.plist */,
 			);
@@ -450,12 +454,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				904BA50B2916BE3400211064 /* DoneWidgetTaskCell.swift in Sources */,
 				1DADE8E3287F3F7400F1F495 /* TaskRepository.swift in Sources */,
 				1D052F5F28809803007DDB87 /* EmptyTaskView.swift in Sources */,
 				1D7E607E29119DF80077BA20 /* StringExtension.swift in Sources */,
 				904BA5072916878D00211064 /* SharedUserDefaults.swift in Sources */,
 				1DD2837E287DEC850095880A /* Task.swift in Sources */,
-				904BA5092916983800211064 /* DoneWidget.swift in Sources */,
 				1D164BE7290DB9B000BBA9C9 /* TaskCellManageButtons.swift in Sources */,
 				1DD28348287C7C5F0095880A /* DoneApp.swift in Sources */,
 				1DADE8E52880635500F1F495 /* AppleSignInButton.swift in Sources */,
@@ -473,7 +477,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				904BA50C2916BE3400211064 /* DoneWidgetTaskCell.swift in Sources */,
 				904BA5082916878D00211064 /* SharedUserDefaults.swift in Sources */,
+				904BA50D2916BF6300211064 /* StringExtension.swift in Sources */,
 				904BA4F829167E8F00211064 /* DoneWidgetBundle.swift in Sources */,
 				904BA4FA29167E8F00211064 /* DoneWidget.swift in Sources */,
 			);

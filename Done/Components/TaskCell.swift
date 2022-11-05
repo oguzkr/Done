@@ -54,11 +54,11 @@ struct TaskCell_Previews: PreviewProvider {
 }
 
 
-extension View {
-    @ViewBuilder func hidden(_ shouldHide: Bool) -> some View {
-        switch shouldHide {
-        case true: self.hidden()
-        case false: self
-        }
-    }
-}
+//extension View {
+//    @ViewBuilder func hidden(_ shouldHide: Bool) -> some View {
+//        switch shouldHide {
+//        case true: self.hidden()
+//        case false: self
+//        }
+//    }
+//}

@@ -44,7 +44,6 @@ struct AddTaskPopUp: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 5)
                         .stroke(LinearGradient(gradient: Gradient(colors: selectedColor.toGradientColor), startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 1)
-                        .animation(.easeInOut)
                 )
                 Spacer(minLength: 10)
                 Button(action: {
