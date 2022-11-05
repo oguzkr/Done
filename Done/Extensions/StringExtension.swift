@@ -15,8 +15,12 @@ extension String {
         case "blueToGreen": return [.blue, .green]
         case "blueToRed": return [.blue, .red]
         case "defaultTaskColor": return [Color("defaultTaskColor")]
-        case "defaultTextColor": return [Color.white]
+        case "textColor": return [Color(uiColor: UIColor(named: "textColor") ?? .clear)]
         default: return [Color("defaultTaskColor")]
         }
+    }
+    
+    func toCustomizedButtonColor() -> [Color] {
+        return self == "defaultTaskColor" ? [Color(uiColor: UIColor(named: "textColor") ?? .clear)] : self.toGradientColor
     }
 }

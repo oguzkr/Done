@@ -16,7 +16,11 @@ struct AddTaskPopUp: View {
     @State private var addButtonDisabled = true
     @State var taskText: String
     @State var taskToEdit: Task?
-
+    
+    let taskColorsGradients = ["defaultTaskColor",
+                                      "redToGreen",
+                                      "blueToGreen",
+                                      "blueToRed"]
     var body: some View {
         VStack {
             HStack {
@@ -24,7 +28,7 @@ struct AddTaskPopUp: View {
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
                     LinearGradient(
-                        colors: ColorHelper.customizedButtonColor(selectedColor),
+                        colors: selectedColor.toCustomizedButtonColor(),
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     )
@@ -84,7 +88,7 @@ struct AddTaskPopUp: View {
                     taskToEdit?.title = value
                 })
             HStack {
-                ForEach(ColorHelper.taskColorsGradients, id: \.self) { taskColor in
+                ForEach(taskColorsGradients, id: \.self) { taskColor in
                     Circle()
                         .strokeBorder(.black.opacity(0.4), lineWidth:3)
                         .background(Circle().fill(LinearGradient(gradient: Gradient(colors: taskColor.toGradientColor), startPoint: .topLeading, endPoint: .bottomTrailing)))

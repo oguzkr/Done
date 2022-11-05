@@ -12,7 +12,6 @@
 		1D164BE7290DB9B000BBA9C9 /* TaskCellManageButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D164BE6290DB9B000BBA9C9 /* TaskCellManageButtons.swift */; };
 		1D32BF46288082DC003FB38F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D32BF45288082DC003FB38F /* GoogleService-Info.plist */; };
 		1D36B7C4290EACA0002D66CF /* AddTaskPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D36B7C3290EACA0002D66CF /* AddTaskPopUp.swift */; };
-		1D7E607C29119A5F0077BA20 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E607B29119A5F0077BA20 /* UIColorExtension.swift */; };
 		1D7E607E29119DF80077BA20 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E607D29119DF80077BA20 /* StringExtension.swift */; };
 		1DA716D528F73C28002E32AF /* Done_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA716D428F73C28002E32AF /* Done_App.swift */; };
 		1DA716D928F73C29002E32AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA716D828F73C29002E32AF /* Assets.xcassets */; };
@@ -35,7 +34,6 @@
 		1DD2837E287DEC850095880A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2837D287DEC850095880A /* Task.swift */; };
 		1DD28380287DF1E30095880A /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2837F287DF1E30095880A /* TaskCellViewModel.swift */; };
 		1DD28382287DF36D0095880A /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD28381287DF36D0095880A /* TaskListViewModel.swift */; };
-		904BA4AF291657E700211064 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA4AE291657E700211064 /* ColorHelper.swift */; };
 		D9E3AEFA290EE94500F652D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9E3AEFC290EE94500F652D0 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +43,6 @@
 		1D164BE6290DB9B000BBA9C9 /* TaskCellManageButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellManageButtons.swift; sourceTree = "<group>"; };
 		1D32BF45288082DC003FB38F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1D36B7C3290EACA0002D66CF /* AddTaskPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskPopUp.swift; sourceTree = "<group>"; };
-		1D7E607B29119A5F0077BA20 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1D7E607D29119DF80077BA20 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1DA716D228F73C28002E32AF /* Done! Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Done! Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA716D428F73C28002E32AF /* Done_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Done_App.swift; sourceTree = "<group>"; };
@@ -66,7 +63,6 @@
 		1DD2837D287DEC850095880A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		1DD2837F287DF1E30095880A /* TaskCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
 		1DD28381287DF36D0095880A /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
-		904BA4AE291657E700211064 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		D9E3AEFB290EE94500F652D0 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9E3AEFD290EE94F00F652D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,7 +94,6 @@
 		1D7E607A29119A420077BA20 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1D7E607B29119A5F0077BA20 /* UIColorExtension.swift */,
 				1D7E607D29119DF80077BA20 /* StringExtension.swift */,
 			);
 			path = Extensions;
@@ -203,7 +198,6 @@
 				1D052F5E28809803007DDB87 /* EmptyTaskView.swift */,
 				1D164BE6290DB9B000BBA9C9 /* TaskCellManageButtons.swift */,
 				1D36B7C3290EACA0002D66CF /* AddTaskPopUp.swift */,
-				904BA4AE291657E700211064 /* ColorHelper.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -351,7 +345,6 @@
 			files = (
 				1DADE8E3287F3F7400F1F495 /* TaskRepository.swift in Sources */,
 				1D052F5F28809803007DDB87 /* EmptyTaskView.swift in Sources */,
-				1D7E607C29119A5F0077BA20 /* UIColorExtension.swift in Sources */,
 				1D7E607E29119DF80077BA20 /* StringExtension.swift in Sources */,
 				1DD2837E287DEC850095880A /* Task.swift in Sources */,
 				1D164BE7290DB9B000BBA9C9 /* TaskCellManageButtons.swift in Sources */,
@@ -360,7 +353,6 @@
 				1DA716EC28F744E5002E32AF /* HomeView.swift in Sources */,
 				1D052F5D288095EE007DDB87 /* TaskCell.swift in Sources */,
 				1D36B7C4290EACA0002D66CF /* AddTaskPopUp.swift in Sources */,
-				904BA4AF291657E700211064 /* ColorHelper.swift in Sources */,
 				1DD28373287C87780095880A /* LoginView.swift in Sources */,
 				1DD28380287DF1E30095880A /* TaskCellViewModel.swift in Sources */,
 				1DD28382287DF36D0095880A /* TaskListViewModel.swift in Sources */,
