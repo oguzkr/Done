@@ -100,15 +100,9 @@ struct DoneWidgetEntryView : View {
             } else {
                 if widgetFamily == .systemSmall {
                     VStack {
-                        ZStack {
-                            Circle()
-                                .frame(width: 25, height: 25)
-                                .foregroundColor(Color("textColor"))
-                            Image(systemName: "plus")
-                                .foregroundColor(.white)
-                                .font(.system(size: 25))
-                                .frame(width: 20, height: 20)
-                        }
+                        Image(systemName: "plus.circle")
+                                        .resizable()
+                                        .frame(width: 30, height: 30, alignment: .center)
                         Text("addYourFirstTask")
                             .foregroundColor(Color("textColor"))
                             .font(.title2)
@@ -117,19 +111,14 @@ struct DoneWidgetEntryView : View {
                     .padding()
                 } else {
                     HStack {
-                        ZStack {
-                            Circle()
-                                .frame(width: 25, height: 25)
-                                .foregroundColor(Color("textColor"))
-                            Image(systemName: "plus")
-                                .foregroundColor(.white)
-                                .font(.system(size: 25))
-                                .frame(width: 20, height: 20)
-                        }
+                        Image(systemName: "plus.circle")
+                                        .resizable()
+                                        .frame(width: 30, height: 30, alignment: .center)
                         Text("addYourFirstTask")
                             .foregroundColor(Color("textColor"))
                             .font(.title2)
                     }
+
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                     .padding()
                 }
