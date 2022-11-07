@@ -39,6 +39,7 @@
 		904BA50C2916BE3400211064 /* DoneWidgetTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA50A2916BE3400211064 /* DoneWidgetTaskCell.swift */; };
 		904BA50D2916BF6300211064 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E607D29119DF80077BA20 /* StringExtension.swift */; };
 		907BA646291976E200603EE6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9E3AEFC290EE94500F652D0 /* Localizable.strings */; };
+		907BA648291996A900603EE6 /* InfoPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BA647291996A900603EE6 /* InfoPopup.swift */; };
 		D9E3AEFA290EE94500F652D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9E3AEFC290EE94500F652D0 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		904BA5052916877200211064 /* DoneWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DoneWidgetExtension.entitlements; sourceTree = "<group>"; };
 		904BA5062916878D00211064 /* SharedUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUserDefaults.swift; sourceTree = "<group>"; };
 		904BA50A2916BE3400211064 /* DoneWidgetTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneWidgetTaskCell.swift; sourceTree = "<group>"; };
+		907BA647291996A900603EE6 /* InfoPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPopup.swift; sourceTree = "<group>"; };
 		D9E3AEFB290EE94500F652D0 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9E3AEFD290EE94F00F652D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,6 +206,7 @@
 				1D052F5C288095EE007DDB87 /* TaskCell.swift */,
 				1D052F5E28809803007DDB87 /* EmptyTaskView.swift */,
 				1D164BE6290DB9B000BBA9C9 /* TaskCellManageButtons.swift */,
+				907BA647291996A900603EE6 /* InfoPopup.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				1DD28348287C7C5F0095880A /* DoneApp.swift in Sources */,
 				1DA716EC28F744E5002E32AF /* HomeView.swift in Sources */,
 				1D052F5D288095EE007DDB87 /* TaskCell.swift in Sources */,
+				907BA648291996A900603EE6 /* InfoPopup.swift in Sources */,
 				1D36B7C4290EACA0002D66CF /* AddTaskView.swift in Sources */,
 				1DD28380287DF1E30095880A /* TaskCellViewModel.swift in Sources */,
 				1DD28382287DF36D0095880A /* TaskListViewModel.swift in Sources */,

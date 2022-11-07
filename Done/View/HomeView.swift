@@ -15,6 +15,7 @@ struct HomeView: View {
     let sharedUserDefaults = UserDefaults(suiteName: SharedUserDefaults.suiteName)
     @State var presentAddNewItem = false
     @State var showSignInForm = false
+    @State var isFirstOpen = true
     
     var body: some View {
        
@@ -58,6 +59,8 @@ struct HomeView: View {
                 .sheet(isPresented: $presentAddNewItem) {
                     AddTaskView(taskText: "")
                 }
+                
+               
             }
             .navigationTitle("Done")
         }
