@@ -18,12 +18,12 @@ struct TaskCell: View {
         HStack {
             Text(taskCellVM.task.title)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                .tint(Color.black)
+                .tint(Color(uiColor: UIColor(named: "textColor") ?? .clear))
                 .strikethrough(self.taskCellVM.task.completed, pattern: .dash, color: .black)
                 .contentShape(Rectangle())
                 .sheet(isPresented: $presentAddNewItem) {
-                    AddTaskPopUp(
-                        selectedColor: Color(uiColor: taskCellVM.task.color?.name ?? UIColor(Color("defaultTaskColor"))),
+                    AddTaskView(
+                        selectedColor: taskCellVM.task.color ?? "defaultTaskColor",
                         taskText: taskCellVM.task.title,
                         taskToEdit: taskCellVM.task)
                 }
@@ -54,11 +54,11 @@ struct TaskCell_Previews: PreviewProvider {
 }
 
 
-extension View {
-    @ViewBuilder func hidden(_ shouldHide: Bool) -> some View {
-        switch shouldHide {
-        case true: self.hidden()
-        case false: self
-        }
-    }
-}
+//extension View {
+//    @ViewBuilder func hidden(_ shouldHide: Bool) -> some View {
+//        switch shouldHide {
+//        case true: self.hidden()
+//        case false: self
+//        }
+//    }
+//}
