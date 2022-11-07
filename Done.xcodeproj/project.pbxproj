@@ -38,6 +38,7 @@
 		904BA50B2916BE3400211064 /* DoneWidgetTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA50A2916BE3400211064 /* DoneWidgetTaskCell.swift */; };
 		904BA50C2916BE3400211064 /* DoneWidgetTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA50A2916BE3400211064 /* DoneWidgetTaskCell.swift */; };
 		904BA50D2916BF6300211064 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E607D29119DF80077BA20 /* StringExtension.swift */; };
+		907BA646291976E200603EE6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9E3AEFC290EE94500F652D0 /* Localizable.strings */; };
 		D9E3AEFA290EE94500F652D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9E3AEFC290EE94500F652D0 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -359,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				904BA4FC29167E9100211064 /* Assets.xcassets in Resources */,
+				907BA646291976E200603EE6 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

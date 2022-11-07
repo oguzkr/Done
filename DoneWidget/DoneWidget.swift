@@ -74,28 +74,67 @@ struct DoneWidgetEntryView : View {
     @Environment(\.widgetFamily) var widgetFamily
     var body: some View {
         VStack {
-            if widgetFamily == .systemExtraLarge || widgetFamily == .systemLarge {
-                HStack {
-                    Image("check")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                    Text("You have done \(entry.doneTaskCount) of \(entry.tasks.count) tasks.")
-                        .frame(height: 30)
-                        .tint(Color(uiColor: UIColor(named: "textColor") ?? .clear))
+            if entry.tasks.count == 0 {
+                if widgetFamily == .systemExtraLarge || widgetFamily == .systemLarge {
+                    HStack {
+                        Image("check")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                        Text("You have done \(entry.doneTaskCount) of \(entry.tasks.count) tasks.")
+                            .frame(height: 30)
+                            .tint(Color(uiColor: UIColor(named: "textColor") ?? .clear))
+                    }
+                    .frame(height: 30)
+                    .padding(7)
                 }
-                .frame(height: 30)
-                .padding(7)
+                ForEach(entry.tasks) { task in
+                    DoneWidgetTaskCell(task: task)
+                        .frame(height: 40)
+                        .padding([.leading, .trailing], 10)
+                        .background(LinearGradient(gradient: Gradient(colors: task.color?.toGradientColor ?? [Color(uiColor: UIColor(named: "defaultTaskColor") ?? .clear)]), startPoint: .topLeading, endPoint: .bottomTrailing))
+                        .cornerRadius(10)
+                        .padding([.leading, .trailing], 10)
+                }
+                Spacer()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            } else {
+                if widgetFamily == .systemSmall {
+                    VStack {
+                        ZStack {
+                            Circle()
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(Color("textColor"))
+                            Image(systemName: "plus")
+                                .foregroundColor(.white)
+                                .font(.system(size: 25))
+                                .frame(width: 20, height: 20)
+                        }
+                        Text("addYourFirstTask")
+                            .foregroundColor(Color("textColor"))
+                            .font(.title2)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                    .padding()
+                } else {
+                    HStack {
+                        ZStack {
+                            Circle()
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(Color("textColor"))
+                            Image(systemName: "plus")
+                                .foregroundColor(.white)
+                                .font(.system(size: 25))
+                                .frame(width: 20, height: 20)
+                        }
+                        Text("addYourFirstTask")
+                            .foregroundColor(Color("textColor"))
+                            .font(.title2)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                    .padding()
+                }
             }
-            ForEach(entry.tasks) { task in
-                DoneWidgetTaskCell(task: task)
-                    .frame(height: 40)
-                    .padding([.leading, .trailing], 10)
-                    .background(LinearGradient(gradient: Gradient(colors: task.color?.toGradientColor ?? [Color(uiColor: UIColor(named: "defaultTaskColor") ?? .clear)]), startPoint: .topLeading, endPoint: .bottomTrailing))
-                    .cornerRadius(10)
-                    .padding([.leading, .trailing], 10)
-            }
-            Spacer()
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+
         }
         .padding(.top, 14)
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
