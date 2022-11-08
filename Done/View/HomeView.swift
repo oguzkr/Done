@@ -13,9 +13,9 @@ struct HomeView: View {
     
     let tasks = testDataTasks
     let sharedUserDefaults = UserDefaults(suiteName: SharedUserDefaults.suiteName)
+    @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
     @State var presentAddNewItem = false
     @State var showSignInForm = false
-    @State var isFirstOpen = true
     
     var body: some View {
        
@@ -59,13 +59,20 @@ struct HomeView: View {
                 .sheet(isPresented: $presentAddNewItem) {
                     AddTaskView(taskText: "")
                 }
-                
-               
+            }
+            
+            .sheet(isPresented: $isFirstLaunch) {
+                InfoPopup()
             }
             .navigationTitle("Done")
+            .navigationBarItems(trailing: Button(action: { self.isFirstLaunch.toggle()
+            }){
+                Image(systemName: "info.circle")
+            })
+
         }
     }
-    
+
     func fetch(){
         var tasks = [SharedUserDefaults.Task]()
         for taskVM in taskListVM.taskCellViewModels {

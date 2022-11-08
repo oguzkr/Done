@@ -16,6 +16,8 @@ struct InfoPopup: View {
     
     @State private var pageIndex = 0
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.presentationMode) private var presentationMode
+    @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
 
     private let infoTexts = [
         InfoText(id: 0, text: "Hi, you don't have to create new account or.."),
@@ -60,11 +62,11 @@ struct InfoPopup: View {
                                 Image(systemName: pageIndex == 2 ? "hand.thumbsup.circle" : "arrow.right.circle")
                                     .resizable()
                                     .frame(width: 40, height: 40)
-                                    .colorInvert()
+                                    .foregroundColor(.white)
                                     .offset(x: 0, y: -45)
                                     .onTapGesture {
                                         if pageIndex == 2 {
-                                            print("close")
+                                            self.presentationMode.wrappedValue.dismiss()
                                         } else {
                                             pageIndex += 1
                                         }
@@ -72,7 +74,8 @@ struct InfoPopup: View {
                             }
                         }
                         
-                    }.tag(infoText.id)
+                    }
+                    .tag(infoText.id)
                 }
                 
             }
@@ -81,10 +84,14 @@ struct InfoPopup: View {
             .indexViewStyle(.page(backgroundDisplayMode: .never))
             .animation(.easeOut(duration: 0.2), value: pageIndex)
             .transition(.slide) // 3
-        }
+        }.onDisappear(perform: setFirstLaunch)
         
         .background(LinearGradient(gradient: Gradient(colors: [Color(uiColor: #colorLiteral(red: 0.131776964, green: 0.1771368398, blue: 0.2837292386, alpha: 1)), Color(uiColor: #colorLiteral(red: 0.1104041667, green: 0.1116397569, blue: 0.299160043, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(20)
+    }
+    
+    func setFirstLaunch() {
+        isFirstLaunch = false
     }
 }
 
