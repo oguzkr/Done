@@ -18,8 +18,9 @@ struct TaskCell: View {
         HStack {
             Text(taskCellVM.task.title)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                .tint(Color(uiColor: UIColor(named: "textColor") ?? .clear))
-                .strikethrough(self.taskCellVM.task.completed, pattern: .dash, color: .black)
+                .foregroundColor(self.taskCellVM.task.color == "darkHumor" ? .white : Color(uiColor: UIColor(named: "textColor") ?? .clear))
+//                .tint()
+                .strikethrough(self.taskCellVM.task.completed, pattern: .dash, color: self.taskCellVM.task.color == "darkHumor" ? .white : .black)
                 .contentShape(Rectangle())
                 .sheet(isPresented: $presentAddNewItem) {
                     AddTaskView(
@@ -37,8 +38,6 @@ struct TaskCell: View {
         
     }
 }
-
-
 
 struct TaskCell_Previews: PreviewProvider {
     static var previews: some View {
