@@ -18,11 +18,11 @@ struct AddTaskView: View {
     @State var taskText: String
     @State var taskToEdit: Task?
     let sharedUserDefaults = UserDefaults(suiteName: SharedUserDefaults.suiteName)
-
     let taskColorsGradients = ["defaultTaskColor",
-                                      "redToGreen",
-                                      "blueToGreen",
-                                      "blueToRed"]
+                               "fiftyShadesOfBlue",
+                               "fiftyShadesOfGreen",
+                               "darkHumor"]
+
     var body: some View {
         VStack {
             HStack {
@@ -60,14 +60,14 @@ struct AddTaskView: View {
                     self.fetch()
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Text(taskToEdit?.title.isEmpty ?? true ? "add" : "Update") //update icin localization yap
-                        .foregroundColor(Color(uiColor: UIColor(named: "textColor") ?? .clear))
+                    Text(taskToEdit?.title.isEmpty ?? true ? "add" : "update")
+                        .foregroundColor(selectedColor == "defaultTaskColor" || selectedColor == "darkHumor" ? .white : Color(uiColor: UIColor(named: "textColor") ?? .clear))
                         .frame(width: 80, height: 25)
                 })
                 .disabled(addButtonDisabled && taskToEdit?.title.isEmpty ?? true)
                 .frame(width: 80)
                 .padding(10)
-                .background(LinearGradient(gradient: Gradient(colors: selectedColor.toGradientColor), startPoint: .topLeading, endPoint: .bottomTrailing))
+                .background(selectedColor == "defaultTaskColor" ? LinearGradient(gradient: Gradient(colors: [Color("appBlue")]), startPoint: .topLeading, endPoint: .bottomTrailing) : LinearGradient(gradient: Gradient(colors: selectedColor.toGradientColor), startPoint: .topLeading, endPoint: .bottomTrailing))
                 .opacity(addButtonDisabled && taskToEdit?.title.isEmpty ?? true ? 0.5 : 1)
                 .cornerRadius(5)
             }
@@ -76,7 +76,7 @@ struct AddTaskView: View {
                 .frame(maxWidth:.infinity, maxHeight: .infinity)
                 .padding(EdgeInsets(top:10, leading:10, bottom: 10, trailing: 30))
                 .scrollContentBackground(.hidden)
-                .foregroundColor(Color(uiColor: UIColor(named: "textColor") ?? .clear))
+                .foregroundColor(selectedColor == "darkHumor" ? .white : Color(uiColor: UIColor(named: "textColor") ?? .clear))
                 .background(LinearGradient(gradient: Gradient(colors: selectedColor.toGradientColor), startPoint: .topLeading, endPoint: .bottomTrailing))
                 .cornerRadius(10)
                 .focused($keyboardFocused)
@@ -92,9 +92,10 @@ struct AddTaskView: View {
             HStack {
                 ForEach(taskColorsGradients, id: \.self) { taskColor in
                     Circle()
-                        .strokeBorder(.black.opacity(0.4), lineWidth:3)
+                        .strokeBorder(selectedColor == taskColor ? .black.opacity(0.6) : .black.opacity(0.4), lineWidth:3)
                         .background(Circle().fill(LinearGradient(gradient: Gradient(colors: taskColor.toGradientColor), startPoint: .topLeading, endPoint: .bottomTrailing)))
                         .frame(width: 40, height: 40)
+                        .padding(.leading)
                         .onTapGesture {
                             selectedColor = taskColor
                         }

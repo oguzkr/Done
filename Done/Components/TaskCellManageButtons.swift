@@ -14,14 +14,14 @@ struct TaskCellManageButtons: View {
     var body: some View {
         HStack {
             Image(systemName: taskCellVM.task.completed ? "checkmark.circle.fill" : "checkmark.circle")
-                .foregroundColor(Color("appBlue"))
+                .foregroundColor(taskCellVM.task.color == "darkHumor" || taskCellVM.task.color == "fiftyShadesOfGreen" ? .white : Color("appBlue") )
                 .frame(width: 40, height: 50)
                 .onTapGesture {
                 self.taskCellVM.task.completed.toggle()
             }
             
             Image(systemName: "trash")
-                .foregroundColor(Color("appBlue"))
+                .foregroundColor(taskCellVM.task.color == "darkHumor" || taskCellVM.task.color == "fiftyShadesOfGreen" ? .white : Color("appBlue") )
                 .frame(width: 40, height: 50)
                 .onTapGesture {
                 self.askDelete.toggle()

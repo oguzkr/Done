@@ -11,9 +11,9 @@ import SwiftUI
 extension String {
     var toGradientColor: [Color] {
         switch self {
-        case "redToGreen": return [.red, .green]
-        case "blueToGreen": return [.blue, .green]
-        case "blueToRed": return [.blue, .red]
+        case "fiftyShadesOfBlue": return [Color("1"), Color("2"), Color("3")]
+        case "fiftyShadesOfGreen": return [Color("4"), Color("5"), Color("6")]
+        case "darkHumor": return [Color("7"), Color("8"), Color("9")]
         case "defaultTaskColor": return [Color("defaultTaskColor")]
         case "textColor": return [Color(uiColor: UIColor(named: "textColor") ?? .clear)]
         default: return [Color("defaultTaskColor")]
