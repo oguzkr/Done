@@ -35,6 +35,6 @@ extension String {
     }
     
     func toCustomizedButtonColor() -> [Color] {
-        return self == "defaultTaskColor" ? [Color(uiColor: UIColor(named: "textColor") ?? .clear)] : self.toGradientColor
+        return self == "defaultTaskColor" ? [Color("textColor")] : self.toGradientColor
     }
 }

@@ -15,7 +15,7 @@ struct DoneWidgetTaskCell: View {
         HStack {
             Text(task.title)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                .tint(Color(uiColor: UIColor(named: "textColor") ?? .clear))
+                .tint(task.color == "defaultTaskColor" ? Color("textColor") : .white)
                 .strikethrough(task.completed, pattern: .dash, color: .black)
                 .contentShape(Rectangle())
         }

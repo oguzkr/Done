@@ -147,7 +147,7 @@ struct DoneWidget: Widget {
 
 struct DoneWidget_Previews: PreviewProvider {
     static var previews: some View {
-        DoneWidgetEntryView(entry: SimpleEntry(date: Date(), tasks: [SharedUserDefaults.Task(title: "AAA", completed: false, color: "redToGreen"),SharedUserDefaults.Task(title: "BB", completed: false, color: "blueToRed"),SharedUserDefaults.Task(title: "CC", completed: false, color: "blueToGreen"),SharedUserDefaults.Task(title: "AA", completed: false, color: "redToGreen"),SharedUserDefaults.Task(title: "BB", completed: false, color: "blueToRed"),SharedUserDefaults.Task(title: "CC", completed: false, color: "blueToGreen"), SharedUserDefaults.Task(title: "CC", completed: false, color: "blueToGreen"), SharedUserDefaults.Task(title: "CC", completed: false, color: "blueToGreen")], doneTaskCount: "4"))
+        DoneWidgetEntryView(entry: SimpleEntry(date: Date(), tasks: [SharedUserDefaults.Task(title: "AAA", completed: false, color: "asteroid"),SharedUserDefaults.Task(title: "BB", completed: false, color: "asteroid"),SharedUserDefaults.Task(title: "CC", completed: false, color: "asteroid"),SharedUserDefaults.Task(title: "AA", completed: false, color: "asteroid"),SharedUserDefaults.Task(title: "BB", completed: false, color: "asteroid"),SharedUserDefaults.Task(title: "CC", completed: false, color: "asteroid"), SharedUserDefaults.Task(title: "CC", completed: false, color: "asteroid"), SharedUserDefaults.Task(title: "CC", completed: false, color: "asteroid")], doneTaskCount: "4"))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

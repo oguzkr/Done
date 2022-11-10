@@ -27,6 +27,7 @@
 		1DD2837E287DEC850095880A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2837D287DEC850095880A /* Task.swift */; };
 		1DD28380287DF1E30095880A /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2837F287DF1E30095880A /* TaskCellViewModel.swift */; };
 		1DD28382287DF36D0095880A /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD28381287DF36D0095880A /* TaskListViewModel.swift */; };
+		9003B12D291D7DFB00B00501 /* DoneWidgetTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA50A2916BE3400211064 /* DoneWidgetTaskCell.swift */; };
 		904BA4F329167E8F00211064 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904BA4F229167E8F00211064 /* WidgetKit.framework */; };
 		904BA4F529167E8F00211064 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904BA4F429167E8F00211064 /* SwiftUI.framework */; };
 		904BA4F829167E8F00211064 /* DoneWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA4F729167E8F00211064 /* DoneWidgetBundle.swift */; };
@@ -35,8 +36,6 @@
 		904BA50029167E9100211064 /* DoneWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 904BA4F029167E8F00211064 /* DoneWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		904BA5072916878D00211064 /* SharedUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA5062916878D00211064 /* SharedUserDefaults.swift */; };
 		904BA5082916878D00211064 /* SharedUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA5062916878D00211064 /* SharedUserDefaults.swift */; };
-		904BA50B2916BE3400211064 /* DoneWidgetTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA50A2916BE3400211064 /* DoneWidgetTaskCell.swift */; };
-		904BA50C2916BE3400211064 /* DoneWidgetTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA50A2916BE3400211064 /* DoneWidgetTaskCell.swift */; };
 		904BA50D2916BF6300211064 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E607D29119DF80077BA20 /* StringExtension.swift */; };
 		907BA646291976E200603EE6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9E3AEFC290EE94500F652D0 /* Localizable.strings */; };
 		907BA648291996A900603EE6 /* InfoPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BA647291996A900603EE6 /* InfoPopup.swift */; };
@@ -374,7 +373,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				904BA50B2916BE3400211064 /* DoneWidgetTaskCell.swift in Sources */,
 				1DADE8E3287F3F7400F1F495 /* TaskRepository.swift in Sources */,
 				1D052F5F28809803007DDB87 /* EmptyTaskView.swift in Sources */,
 				1D7E607E29119DF80077BA20 /* StringExtension.swift in Sources */,
@@ -395,11 +393,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				904BA50C2916BE3400211064 /* DoneWidgetTaskCell.swift in Sources */,
 				904BA5082916878D00211064 /* SharedUserDefaults.swift in Sources */,
 				904BA50D2916BF6300211064 /* StringExtension.swift in Sources */,
 				904BA4F829167E8F00211064 /* DoneWidgetBundle.swift in Sources */,
 				904BA4FA29167E8F00211064 /* DoneWidget.swift in Sources */,
+				9003B12D291D7DFB00B00501 /* DoneWidgetTaskCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,7 +622,7 @@
 				INFOPLIST_FILE = DoneWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DoneWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -654,7 +652,7 @@
 				INFOPLIST_FILE = DoneWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DoneWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
