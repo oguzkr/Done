@@ -18,10 +18,18 @@ struct AddTaskView: View {
     @State var taskText: String
     @State var taskToEdit: Task?
     let sharedUserDefaults = UserDefaults(suiteName: SharedUserDefaults.suiteName)
+//    let taskColorsGradients = ["defaultTaskColor",
+//                               "fiftyShadesOfBlue",
+//                               "fiftyShadesOfGreen",
+//                               "darkHumor"]
+    
     let taskColorsGradients = ["defaultTaskColor",
-                               "fiftyShadesOfBlue",
-                               "fiftyShadesOfGreen",
-                               "darkHumor"]
+                               "darkNight",
+                               "kingYna",
+                               "miamiDolphins",
+                               "rainbowBlue",
+                               "timber",
+                               "witchingHour"]
 
     var body: some View {
         VStack {
@@ -61,7 +69,7 @@ struct AddTaskView: View {
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text(taskToEdit?.title.isEmpty ?? true ? "add" : "update")
-                        .foregroundColor(selectedColor == "defaultTaskColor" || selectedColor == "darkHumor" ? .white : Color(uiColor: UIColor(named: "textColor") ?? .clear))
+                        .foregroundColor(selectedColor == "defaultTaskColor" ? Color("textColor") : .white)
                         .frame(width: 80, height: 25)
                 })
                 .disabled(addButtonDisabled && taskToEdit?.title.isEmpty ?? true)
@@ -76,7 +84,7 @@ struct AddTaskView: View {
                 .frame(maxWidth:.infinity, maxHeight: .infinity)
                 .padding(EdgeInsets(top:10, leading:10, bottom: 10, trailing: 30))
                 .scrollContentBackground(.hidden)
-                .foregroundColor(selectedColor == "darkHumor" ? .white : Color(uiColor: UIColor(named: "textColor") ?? .clear))
+                .foregroundColor(selectedColor == "defaultTaskColor" ? Color("textColor") : .white)
                 .background(LinearGradient(gradient: Gradient(colors: selectedColor.toGradientColor), startPoint: .topLeading, endPoint: .bottomTrailing))
                 .cornerRadius(10)
                 .focused($keyboardFocused)

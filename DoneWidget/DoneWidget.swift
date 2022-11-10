@@ -74,7 +74,7 @@ struct DoneWidgetEntryView : View {
     @Environment(\.widgetFamily) var widgetFamily
     var body: some View {
         VStack {
-            if entry.tasks.count == 0 {
+            if entry.tasks.count > 0 {
                 if widgetFamily == .systemExtraLarge || widgetFamily == .systemLarge {
                     HStack {
                         Image("check")

@@ -18,9 +18,9 @@ struct TaskCell: View {
         HStack {
             Text(taskCellVM.task.title)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                .foregroundColor(self.taskCellVM.task.color == "darkHumor" ? .white : Color(uiColor: UIColor(named: "textColor") ?? .clear))
+                .foregroundColor(self.taskCellVM.task.color == "defaultTaskColor" ? Color("textColor") : .white)
 //                .tint()
-                .strikethrough(self.taskCellVM.task.completed, pattern: .dash, color: self.taskCellVM.task.color == "darkHumor" ? .white : .black)
+                .strikethrough(self.taskCellVM.task.completed, pattern: .dash, color: self.taskCellVM.task.color == "defaultTaskColor" ? Color("textColor") : .white)
                 .contentShape(Rectangle())
                 .sheet(isPresented: $presentAddNewItem) {
                     AddTaskView(
