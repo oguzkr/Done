@@ -18,6 +18,7 @@ struct AddTaskView: View {
     @State var taskText: String
     @State var taskToEdit: Task?
     let sharedUserDefaults = UserDefaults(suiteName: SharedUserDefaults.suiteName)
+
 //    let taskColorsGradients = ["defaultTaskColor",
 //                               "fiftyShadesOfBlue",
 //                               "fiftyShadesOfGreen",
@@ -27,9 +28,12 @@ struct AddTaskView: View {
                                "darkNight",
                                "kingYna",
                                "miamiDolphins",
+                               "flare",
                                "rainbowBlue",
                                "timber",
-                               "witchingHour"]
+                               "witchingHour",
+                               "asteroid",
+                               "quepal"]
 
     var body: some View {
         VStack {
@@ -85,7 +89,7 @@ struct AddTaskView: View {
                 .padding(EdgeInsets(top:10, leading:10, bottom: 10, trailing: 30))
                 .scrollContentBackground(.hidden)
                 .foregroundColor(selectedColor == "defaultTaskColor" ? Color("textColor") : .white)
-                .background(LinearGradient(gradient: Gradient(colors: selectedColor.toGradientColor), startPoint: .topLeading, endPoint: .bottomTrailing))
+                .background(LinearGradient(gradient: Gradient(colors: selectedColor.toGradientColor), startPoint: .topLeading, endPoint: .bottomTrailing).onAppear())
                 .cornerRadius(10)
                 .focused($keyboardFocused)
                 .onAppear {
@@ -97,17 +101,21 @@ struct AddTaskView: View {
                     addButtonDisabled = value.count > 0 ? false : true
                     taskToEdit?.title = value
                 })
-            HStack {
-                ForEach(taskColorsGradients, id: \.self) { taskColor in
-                    Circle()
-                        .strokeBorder(selectedColor == taskColor ? .black.opacity(0.6) : .black.opacity(0.4), lineWidth:3)
-                        .background(Circle().fill(LinearGradient(gradient: Gradient(colors: taskColor.toGradientColor), startPoint: .topLeading, endPoint: .bottomTrailing)))
-                        .frame(width: 40, height: 40)
-                        .padding(.leading)
-                        .onTapGesture {
-                            selectedColor = taskColor
-                        }
-                    Spacer()
+            
+           
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(taskColorsGradients, id: \.self) { taskColor in
+                        Circle()
+                            .strokeBorder(selectedColor == taskColor ? .black.opacity(0.6) : .black.opacity(0.4), lineWidth:3)
+                            .background(Circle().fill(LinearGradient(gradient: Gradient(colors: taskColor.toGradientColor), startPoint: .topLeading, endPoint: .bottomTrailing)))
+                            .frame(width: 40, height: 40)
+                            .padding(.leading)
+                            .onTapGesture {
+                                selectedColor = taskColor
+                            }
+                        Spacer()
+                    }
                 }
             }
         }
