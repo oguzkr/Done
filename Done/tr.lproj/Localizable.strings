@@ -17,3 +17,6 @@
 "info3" = "Sadece görevlerini ekle, tamamla ve bir sonrakine geç :)";
 "largeWidgetTitle" = "You have done %d of %d tasks." ;
 "trackyourtasks" = "Yapılacaklar listeni takip et.";
+"deleteTask" = "Bu görevi silmek istediğine emin misin?";
+"yes" = "Evet";
+"no" = "Hayır";

@@ -22,17 +22,19 @@ struct HomeView: View {
         NavigationView {
             VStack(alignment: .leading) {
                 if taskListVM.taskCellViewModels.count > 0 || self.presentAddNewItem == true {
-                    List {
+                    List() {
                         ForEach(taskListVM.taskCellViewModels) { taskCellVM in
                             TaskCell(taskCellVM: taskCellVM)
                                 .padding(10)
                                 .listRowSeparator(.hidden)
                                 .background(LinearGradient(gradient: Gradient(colors: taskCellVM.task.color?.toGradientColor ?? [Color(uiColor: UIColor(named: "defaultTaskColor") ?? .clear)]), startPoint: .topLeading, endPoint: .bottomTrailing))
                                 .cornerRadius(5)
+                                
                         }
                     }
                     .onAppear(perform: fetch)
                     .listStyle(.plain)
+                    .animation(.easeOut)
                 }
                 else {
                     List {

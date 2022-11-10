@@ -15,22 +15,22 @@ struct TaskCellManageButtons: View {
         HStack {
             Image(systemName: taskCellVM.task.completed ? "checkmark.circle.fill" : "checkmark.circle")
                 .foregroundColor(taskCellVM.task.color == "defaultTaskColor" ? Color("textColor") : .white)
-                .frame(width: 50, height: 50)
+                .frame(width: 40, height: 50)
                 .onTapGesture {
                 self.taskCellVM.task.completed.toggle()
             }
             
             Image(systemName: "trash")
                 .foregroundColor(taskCellVM.task.color == "defaultTaskColor" ? Color("textColor") : .white)
-                .frame(width: 50, height: 50)
+                .frame(width: 40, height: 50)
                 .onTapGesture {
                 self.askDelete.toggle()
                 }
-                .alert("Are you sure you want to delete this task?", isPresented: self.$askDelete) {
-                    Button("Yes") {
+                .alert("deleteTask", isPresented: self.$askDelete) {
+                    Button("yes") {
                         self.taskCellVM.taskRepository.deleteTask(self.taskCellVM.task)
                     }
-                    Button("No", role: .cancel) { }
+                    Button("no", role: .cancel) { }
                 }
 
 

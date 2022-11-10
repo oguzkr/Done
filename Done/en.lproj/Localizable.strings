@@ -17,3 +17,6 @@
 "info3" = "Just add something to keep in mind, get it done, move to next one.";
 "largeWidgetTitle" = "You have done %d of %d tasks.";
 "trackyourtasks" = "Track your tasks.";
+"deleteTask" = "Are you sure you want to delete this task?";
+"yes" = "Yes";
+"no" = "No";

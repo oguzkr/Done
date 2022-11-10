@@ -20,7 +20,7 @@ struct TaskCell: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 .foregroundColor(self.taskCellVM.task.color == "defaultTaskColor" ? Color("textColor") : .white)
 //                .tint()
-                .strikethrough(self.taskCellVM.task.completed, pattern: .dash, color: self.taskCellVM.task.color == "defaultTaskColor" ? Color("textColor") : .white)
+                .strikethrough(self.taskCellVM.task.completed, pattern: .solid, color: self.taskCellVM.task.color == "defaultTaskColor" ? Color("textColor") : .white)
                 .contentShape(Rectangle())
                 .sheet(isPresented: $presentAddNewItem) {
                     AddTaskView(
