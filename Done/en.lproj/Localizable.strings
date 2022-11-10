@@ -12,3 +12,8 @@
 "add" = "Add";
 "ZAAAAA" = "ZAAAAA";
 "update" = "Update";
+"info1" = "Hi, you don't have to create new account or..";
+"info2" = "set complicated customizations for your todos.";
+"info3" = "Just add something to keep in mind, get it done, move to next one.";
+"largeWidgetTitle" = "You have done %d of %d tasks.";
+"trackyourtasks" = "Track your tasks.";

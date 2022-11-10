@@ -72,7 +72,7 @@ struct AddTaskView: View {
                     self.fetch()
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Text(taskToEdit?.title.isEmpty ?? true ? "add" : "update")
+                    Text(taskToEdit?.id?.isEmpty ?? true ? "add" : "update")
                         .foregroundColor(selectedColor == "defaultTaskColor" ? Color("textColor") : .white)
                         .frame(width: 80, height: 25)
                 })

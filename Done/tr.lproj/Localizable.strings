@@ -12,3 +12,8 @@
 "add" = "Ekle";
 "ZAAAAA" = "ZAAAAA";
 "update" = "Güncelle";
+"info1" = "Merhaba, yeni bir hesap oluşturmana veya..";
+"info2" = "yapılacaklar listen için karmaşık düzenlemeler yapmana gerek yok.";
+"info3" = "Sadece görevlerini ekle, tamamla ve bir sonrakine geç :)";
+"largeWidgetTitle" = "You have done %d of %d tasks." ;
+"trackyourtasks" = "Yapılacaklar listeni takip et.";

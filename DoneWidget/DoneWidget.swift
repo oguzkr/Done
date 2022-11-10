@@ -141,7 +141,7 @@ struct DoneWidget: Widget {
             DoneWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Done")
-        .description("Track your tasks")
+        .description("trackyourtasks")
     }
 }
 

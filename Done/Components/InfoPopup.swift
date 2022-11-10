@@ -20,9 +20,9 @@ struct InfoPopup: View {
     @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
 
     private let infoTexts = [
-        InfoText(id: 0, text: "Hi, you don't have to create new account or.."),
-        InfoText(id: 1, text: "set complicated customizations for your todos."),
-        InfoText(id: 2, text: "Just add something to keep in mind, get it done, move to next one.")]
+        InfoText(id: 0, text: String(localized: "info1", comment: "")),
+        InfoText(id: 1, text: String(localized: "info2", comment: "")),
+        InfoText(id: 2, text: String(localized: "info3", comment: ""))]
     
     
     var body: some View {
