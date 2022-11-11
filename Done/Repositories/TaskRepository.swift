@@ -13,15 +13,23 @@ import FirebaseFirestoreSwift
 class TaskRepository: ObservableObject {
     
     let db = Firestore.firestore()
-    
+    var isFirstLaunch = false
     @Published var tasks = [Task]()
     
     init() {
-        loadData()
+        //FirebaseApp.configure()
+        if Auth.auth().currentUser == nil {
+            Auth.auth().signInAnonymously { result, error in
+                self.loadData(userId: result?.user.uid)
+            }
+        } else {
+            loadData(userId: Auth.auth().currentUser?.uid)
+        }
+        isFirstLaunch = UserDefaults.isFirstLaunch()
     }
     
-    func loadData(){
-        guard let userId = Auth.auth().currentUser?.uid else { return }
+    func loadData(userId: String?){
+        //guard let userId = Auth.auth().currentUser?.uid else { return }
         db.collection("tasks")
             .whereField("userId", isEqualTo: userId)
             .order(by: "completed")
