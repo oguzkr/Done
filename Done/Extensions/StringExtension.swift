@@ -10,14 +10,6 @@ import SwiftUI
 
 extension String {
     var toGradientColor: [Color] {
-//        switch self {
-//        case "fiftyShadesOfBlue": return [Color("1"), Color("2"), Color("3")]
-//        case "fiftyShadesOfGreen": return [Color("4"), Color("5"), Color("6")]
-//        case "darkHumor": return [Color("7"), Color("8"), Color("9")]
-//        case "defaultTaskColor": return [Color("defaultTaskColor")]
-//        case "textColor": return [Color(uiColor: UIColor(named: "textColor") ?? .clear)]
-//        default: return [Color("defaultTaskColor")]
-//        }
         switch self {
         case "darkNight": return [Color("darkNight1"),Color("darkNight2")]
         case "kingYna": return [Color("kingYna1"),Color("kingYna2"),Color("kingYna3")]
@@ -28,8 +20,6 @@ extension String {
         case "witchingHour": return [Color("witchingHour1"),Color("witchingHour2")]
         case "asteroid": return [Color("asteroid1"),Color("asteroid2"),Color("asteroid3")]
         case "quepal": return [Color("quepal1"),Color("quepal2")]
-
-
         default: return [Color("defaultTaskColor")]
         }
     }

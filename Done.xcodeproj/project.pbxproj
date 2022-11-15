@@ -27,6 +27,7 @@
 		1DD2837E287DEC850095880A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2837D287DEC850095880A /* Task.swift */; };
 		1DD28380287DF1E30095880A /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2837F287DF1E30095880A /* TaskCellViewModel.swift */; };
 		1DD28382287DF36D0095880A /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD28381287DF36D0095880A /* TaskListViewModel.swift */; };
+		1DF28EF629239ADE00BB868D /* UserDeaultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF28EF529239ADE00BB868D /* UserDeaultExtension.swift */; };
 		9003B12D291D7DFB00B00501 /* DoneWidgetTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904BA50A2916BE3400211064 /* DoneWidgetTaskCell.swift */; };
 		904BA4F329167E8F00211064 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904BA4F229167E8F00211064 /* WidgetKit.framework */; };
 		904BA4F529167E8F00211064 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904BA4F429167E8F00211064 /* SwiftUI.framework */; };
@@ -84,6 +85,7 @@
 		1DD2837D287DEC850095880A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		1DD2837F287DF1E30095880A /* TaskCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
 		1DD28381287DF36D0095880A /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
+		1DF28EF529239ADE00BB868D /* UserDeaultExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeaultExtension.swift; sourceTree = "<group>"; };
 		904BA4F029167E8F00211064 /* DoneWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DoneWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		904BA4F229167E8F00211064 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		904BA4F429167E8F00211064 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				1D7E607D29119DF80077BA20 /* StringExtension.swift */,
+				1DF28EF529239ADE00BB868D /* UserDeaultExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				1D7E607E29119DF80077BA20 /* StringExtension.swift in Sources */,
 				904BA5072916878D00211064 /* SharedUserDefaults.swift in Sources */,
 				1DD2837E287DEC850095880A /* Task.swift in Sources */,
+				1DF28EF629239ADE00BB868D /* UserDeaultExtension.swift in Sources */,
 				1D164BE7290DB9B000BBA9C9 /* TaskCellManageButtons.swift in Sources */,
 				1DD28348287C7C5F0095880A /* DoneApp.swift in Sources */,
 				1DA716EC28F744E5002E32AF /* HomeView.swift in Sources */,

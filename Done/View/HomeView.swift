@@ -86,7 +86,6 @@ struct HomeView: View {
         if let encodedData = try? JSONEncoder().encode(tasks) {
             sharedUserDefaults?.set(encodedData, forKey: SharedUserDefaults.Keys.tasks)
             WidgetCenter.shared.reloadAllTimelines()
-            print("RELOADING DATA FOR WIDGET")
         }
     }
 }

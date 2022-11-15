@@ -18,11 +18,6 @@ struct AddTaskView: View {
     @State var taskText: String
     @State var taskToEdit: Task?
     let sharedUserDefaults = UserDefaults(suiteName: SharedUserDefaults.suiteName)
-
-//    let taskColorsGradients = ["defaultTaskColor",
-//                               "fiftyShadesOfBlue",
-//                               "fiftyShadesOfGreen",
-//                               "darkHumor"]
     
     let taskColorsGradients = ["defaultTaskColor",
                                "darkNight",
@@ -133,7 +128,6 @@ struct AddTaskView: View {
         if let encodedData = try? JSONEncoder().encode(tasks) {
             sharedUserDefaults?.set(encodedData, forKey: SharedUserDefaults.Keys.tasks)
             WidgetCenter.shared.reloadAllTimelines()
-            print("RELOADING DATA FOR WIDGET")
         }
     }
 
