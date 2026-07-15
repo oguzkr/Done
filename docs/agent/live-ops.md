@@ -1,7 +1,7 @@
 # iTask Operations
 
 Shared live-ops workflow and official references live at
-`/Users/oguzdoruk/.agents/skills/mobile-live-ops/`. Use `project.md` for stable
+`$HOME/.agents/skills/mobile-live-ops/`. Use `project.md` for stable
 service pointers and read current values from the source system.
 
 ## Firebase

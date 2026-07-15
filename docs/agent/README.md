@@ -6,7 +6,7 @@ This directory contains only project-specific agent guidance.
 
 1. `project.md` for stable project and service pointers.
 2. `live-ops.md` for project-specific commands and decisions.
-3. `/Users/oguzdoruk/.agents/skills/mobile-live-ops/SKILL.md` for shared workflows and official references.
+3. `$HOME/.agents/skills/mobile-live-ops/SKILL.md` for shared workflows and official references.
 
 ## Rules
 
