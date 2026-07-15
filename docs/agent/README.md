@@ -1,16 +1,16 @@
 # Agent Docs - iTask
 
-Read these files before Firebase, build, release-adjacent, or analytics work.
+This directory contains only project-specific agent guidance.
+
+## Read Order
+
+1. `project.md` for stable project and service pointers.
+2. `live-ops.md` for project-specific commands and decisions.
+3. `/Users/oguzdoruk/.agents/skills/mobile-live-ops/SKILL.md` for shared workflows and official references.
 
 ## Rules
 
-- Use live Firebase/ASC sources for current claims.
-- Do not create repo-local `AI/`, runtime dumps, scratch folders, generated reports, build exports, or copied credentials.
-- Mutating Firebase writes/deploys require explicit current user intent and readback.
-
-## Files
-
-- `project.md`: stable project identity and service pointers.
-- `live-ops.md`: operation runbook.
-- `known-fixes.md`: current canonical fixes.
-- `references.md`: reusable official links.
+- Read current state from the live source before making a current claim.
+- Keep each instruction in one canonical place.
+- When guidance is wrong, correct its first source and remove stale copies; do not add a fix ledger or incident history.
+- Keep runtime output, scratch data, generated reports, build artifacts, and credentials outside the repo.

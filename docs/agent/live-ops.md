@@ -1,21 +1,19 @@
-# iTask Live Ops
+# iTask Operations
 
-## First Read
-
-- Start with `docs/agent/README.md`, `project.md`, this file, and `known-fixes.md`.
-- Treat repo docs as routing context only.
+Shared live-ops workflow and official references live at
+`/Users/oguzdoruk/.agents/skills/mobile-live-ops/`. Use `project.md` for stable
+service pointers and read current values from the source system.
 
 ## Firebase
 
-- Firebase project: `done-507cd`.
-- Reads such as project/app discovery are safe.
-- Firestore writes, Auth changes, Remote Config writes, and deploys are mutating; state target collection/config and readback plan first.
+- The Firebase project is `done-507cd`.
+- Read project/app state live. Firestore, Auth, Remote Config, and deploy changes
+  are mutations and require a scoped readback plan.
 
-## App Store Connect and Release
+## App Store Connect
 
-- No Fastlane lane is configured.
-- ASC app id is not configured in repo; verify live before metadata, pricing, build, or review-submission work.
+Fastlane and an ASC app id are not configured in the repo. Verify the app live
+before metadata, pricing, build, or review-submission work.
 
-## Do Not Store
-
-- Do not commit Firebase exports, generated analytics reports, IPA/dSYM files, or credential files.
+Keep Firebase exports, analytics reports, build artifacts, and credentials
+outside the repo.
